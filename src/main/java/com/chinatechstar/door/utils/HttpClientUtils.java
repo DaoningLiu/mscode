@@ -61,10 +61,9 @@ public class HttpClientUtils {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         JSONObject jsonResult = null;
         HttpPost httpPost = new HttpPost(url);
-        //httpPost.setHeader ( "REQUEST_CODE", "PUBLICE_SERVICE" );
-        //httpPost.setHeader ( "REQUEUST_ID","20221011" );
+        httpPost.setHeader ( "REQUEST_CODE", "PUBLICE_SERVICE" );
+        httpPost.setHeader ( "REQUEUST_ID","20221011" );
         httpPost.setConfig(requestConfig);
-
         try
         {
             if (null != stringMap)

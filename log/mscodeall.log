@@ -393,3 +393,1152 @@ date:2022-03-10 15:14:18	thread:http-nio-10003-exec-7	level:WARN 	logger:c.c.com
 ### Cause: java.sql.SQLException: ORA-12899: 列 "C##MSCODE"."Y_PROSON_DATEILS"."birth_time" 的值太大 (实际值: 10, 最大值: 7)
 
 date:2022-03-10 15:14:18	thread:http-nio-10003-exec-7	level:DEBUG	logger:o.springframework.web.servlet.DispatcherServlet 	msg:Completed 200 OK
+date:2022-04-01 15:53:48	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Starting MSCodeGatewayApplication using Java 1.8.0_131 on DESKTOP-PFI3VHK with PID 7036 (E:\item\国资\mscode\mscode\target\classes started by 刘道宁 in E:\item\国资\mscode\mscode)
+date:2022-04-01 15:53:48	thread:main	level:DEBUG	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Running with Spring Boot v2.5.4, Spring v5.3.9
+date:2022-04-01 15:53:48	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:The following profiles are active: native
+date:2022-04-01 15:54:47	thread:Druid-ConnectionPool-Create-1476314687	level:ERROR	logger:com.alibaba.druid.pool.DruidDataSource          	msg:create connection SQLException, url: jdbc:oracle:thin:@192.168.68.35:1521:ORCL, errorCode 17002, state 08006
+java.sql.SQLRecoverableException: IO 错误: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:901)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:813)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:80)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:816)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:620)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1657)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2801)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:650)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:586)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:687)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:334)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1681)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:625)
+	... 7 common frames omitted
+Caused by: java.io.IOException: Connection timed out: connect, socket connect lapse 21041 ms. /192.168.68.35 1521 0 1 true
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:233)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:202)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:583)
+	... 12 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at sun.nio.ch.Net.connect0(Native Method)
+	at sun.nio.ch.Net.connect(Net.java:454)
+	at sun.nio.ch.Net.connect(Net.java:446)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:648)
+	at java.nio.channels.SocketChannel.open(SocketChannel.java:189)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:104)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:82)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:192)
+	... 14 common frames omitted
+date:2022-04-01 15:55:29	thread:Druid-ConnectionPool-Create-1476314687	level:ERROR	logger:com.alibaba.druid.pool.DruidDataSource          	msg:create connection SQLException, url: jdbc:oracle:thin:@192.168.68.35:1521:ORCL, errorCode 17002, state 08006
+java.sql.SQLRecoverableException: IO 错误: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:901)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:813)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:80)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:816)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:620)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1657)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1723)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2801)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:650)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:586)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:687)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:334)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1681)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:625)
+	... 7 common frames omitted
+Caused by: java.io.IOException: Connection timed out: connect, socket connect lapse 21038 ms. /192.168.68.35 1521 0 1 true
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:233)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:202)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:583)
+	... 12 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at sun.nio.ch.Net.connect0(Native Method)
+	at sun.nio.ch.Net.connect(Net.java:454)
+	at sun.nio.ch.Net.connect(Net.java:446)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:648)
+	at java.nio.channels.SocketChannel.open(SocketChannel.java:189)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:104)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:82)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:192)
+	... 14 common frames omitted
+date:2022-04-01 15:55:51	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Starting MSCodeGatewayApplication using Java 1.8.0_131 on DESKTOP-PFI3VHK with PID 3792 (E:\item\国资\mscode\mscode\target\classes started by 刘道宁 in E:\item\国资\mscode\mscode)
+date:2022-04-01 15:55:51	thread:main	level:DEBUG	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Running with Spring Boot v2.5.4, Spring v5.3.9
+date:2022-04-01 15:55:51	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:The following profiles are active: native
+date:2022-04-01 15:56:02	thread:main	level:ERROR	logger:o.a.engine.impl.interceptor.CommandContext      	msg:Error while closing command context
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:70)
+	at org.activiti.engine.impl.db.DbSqlSession.getDbVersion(DbSqlSession.java:987)
+	at org.activiti.engine.impl.db.DbSqlSession.dbSchemaCheckVersion(DbSqlSession.java:940)
+	at org.activiti.engine.impl.db.DbSqlSession.performSchemaOperationsProcessEngineBuild(DbSqlSession.java:1499)
+	at org.activiti.engine.impl.SchemaOperationsProcessEngineBuild.execute(SchemaOperationsProcessEngineBuild.java:28)
+	at org.activiti.engine.impl.interceptor.CommandInvoker$1.run(CommandInvoker.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.executeOperation(CommandInvoker.java:78)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.executeOperations(CommandInvoker.java:57)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:42)
+	at org.activiti.engine.impl.interceptor.TransactionContextInterceptor.execute(TransactionContextInterceptor.java:48)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:59)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:29)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:44)
+	at org.activiti.engine.impl.ProcessEngineImpl.<init>(ProcessEngineImpl.java:68)
+	at org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl.buildProcessEngine(ProcessEngineConfigurationImpl.java:846)
+	at org.activiti.spring.SpringProcessEngineConfiguration.buildProcessEngine(SpringProcessEngineConfiguration.java:70)
+	at org.activiti.spring.ProcessEngineFactoryBean.getObject(ProcessEngineFactoryBean.java:57)
+	at org.activiti.spring.ProcessEngineFactoryBean.getObject(ProcessEngineFactoryBean.java:32)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:169)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1884)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1266)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:345)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.chinatechstar.MSCodeGatewayApplication.main(MSCodeGatewayApplication.java:48)
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:509)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:461)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:553)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:269)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:807)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:983)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1168)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3666)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3778)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1081)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 81 common frames omitted
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-00942: 表或视图不存在
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:513)
+	... 104 common frames omitted
+date:2022-04-01 15:56:02	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: org.springframework.transaction.StaticTransactionDefinition@45fdd38d
+date:2022-04-01 15:56:02	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@20da6b63] for JDBC transaction
+date:2022-04-01 15:56:02	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@20da6b63] to manual commit
+date:2022-04-01 15:56:02	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Should roll back transaction but cannot - no transaction available
+date:2022-04-01 15:56:02	thread:main	level:WARN 	logger:o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext	msg:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deploymentController': Unsatisfied dependency expressed through field 'deploymentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deploymentServiceImpl': Unsatisfied dependency expressed through field 'repositoryService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'repositoryService' defined in class path resource [com/chinatechstar/activiti/config/ActivitiConfig.class]: Unsatisfied dependency expressed through method 'repositoryService' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'processEngine': FactoryBean threw exception on object creation; nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+date:2022-04-01 15:56:02	thread:main	level:WARN 	logger:org.apache.catalina.loader.WebappClassLoaderBase	msg:The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.Inet6AddressImpl.getHostByAddr(Native Method)
+ java.net.InetAddress$2.getHostByAddr(InetAddress.java:932)
+ java.net.InetAddress.getHostFromNameService(InetAddress.java:617)
+ java.net.InetAddress.getHostName(InetAddress.java:559)
+ java.net.InetAddress.getHostName(InetAddress.java:531)
+ org.springframework.cloud.commons.util.InetUtils$$Lambda$98/2116179210.call(Unknown Source)
+ java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+ java.util.concurrent.FutureTask.run(FutureTask.java)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+ java.lang.Thread.run(Thread.java:748)
+date:2022-04-01 15:56:02	thread:main	level:WARN 	logger:org.apache.catalina.loader.WebappClassLoaderBase	msg:The web application [ROOT] appears to have started a thread named [RxIoScheduler-1 (Evictor)] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+ java.lang.Thread.run(Thread.java:748)
+date:2022-04-01 15:56:02	thread:main	level:ERROR	logger:org.springframework.boot.SpringApplication      	msg:Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deploymentController': Unsatisfied dependency expressed through field 'deploymentService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deploymentServiceImpl': Unsatisfied dependency expressed through field 'repositoryService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'repositoryService' defined in class path resource [com/chinatechstar/activiti/config/ActivitiConfig.class]: Unsatisfied dependency expressed through method 'repositoryService' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'processEngine': FactoryBean threw exception on object creation; nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.chinatechstar.MSCodeGatewayApplication.main(MSCodeGatewayApplication.java:48)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'deploymentServiceImpl': Unsatisfied dependency expressed through field 'repositoryService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'repositoryService' defined in class path resource [com/chinatechstar/activiti/config/ActivitiConfig.class]: Unsatisfied dependency expressed through method 'repositoryService' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'processEngine': FactoryBean threw exception on object creation; nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'repositoryService' defined in class path resource [com/chinatechstar/activiti/config/ActivitiConfig.class]: Unsatisfied dependency expressed through method 'repositoryService' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'processEngine': FactoryBean threw exception on object creation; nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:541)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 34 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'processEngine': FactoryBean threw exception on object creation; nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:176)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:101)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1884)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getObjectForBeanInstance(AbstractAutowireCapableBeanFactory.java:1266)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:345)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 47 common frames omitted
+Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+### The error may exist in org/activiti/db/mapping/entity/Property.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select VALUE_ from ACT_GE_PROPERTY where NAME_ = 'schema.version'
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:70)
+	at org.activiti.engine.impl.db.DbSqlSession.getDbVersion(DbSqlSession.java:987)
+	at org.activiti.engine.impl.db.DbSqlSession.dbSchemaCheckVersion(DbSqlSession.java:940)
+	at org.activiti.engine.impl.db.DbSqlSession.performSchemaOperationsProcessEngineBuild(DbSqlSession.java:1499)
+	at org.activiti.engine.impl.SchemaOperationsProcessEngineBuild.execute(SchemaOperationsProcessEngineBuild.java:28)
+	at org.activiti.engine.impl.interceptor.CommandInvoker$1.run(CommandInvoker.java:37)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.executeOperation(CommandInvoker.java:78)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.executeOperations(CommandInvoker.java:57)
+	at org.activiti.engine.impl.interceptor.CommandInvoker.execute(CommandInvoker.java:42)
+	at org.activiti.engine.impl.interceptor.TransactionContextInterceptor.execute(TransactionContextInterceptor.java:48)
+	at org.activiti.engine.impl.interceptor.CommandContextInterceptor.execute(CommandContextInterceptor.java:59)
+	at org.activiti.spring.SpringTransactionInterceptor$1.doInTransaction(SpringTransactionInterceptor.java:47)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.activiti.spring.SpringTransactionInterceptor.execute(SpringTransactionInterceptor.java:45)
+	at org.activiti.engine.impl.interceptor.LogInterceptor.execute(LogInterceptor.java:29)
+	at org.activiti.engine.impl.cfg.CommandExecutorImpl.execute(CommandExecutorImpl.java:44)
+	at org.activiti.engine.impl.ProcessEngineImpl.<init>(ProcessEngineImpl.java:68)
+	at org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl.buildProcessEngine(ProcessEngineConfigurationImpl.java:846)
+	at org.activiti.spring.SpringProcessEngineConfiguration.buildProcessEngine(SpringProcessEngineConfiguration.java:70)
+	at org.activiti.spring.ProcessEngineFactoryBean.getObject(ProcessEngineFactoryBean.java:57)
+	at org.activiti.spring.ProcessEngineFactoryBean.getObject(ProcessEngineFactoryBean.java:32)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:169)
+	... 57 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: 表或视图不存在
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:509)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:461)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:553)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:269)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:807)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:983)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1168)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3666)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3778)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1081)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:497)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	... 81 common frames omitted
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-00942: 表或视图不存在
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:513)
+	... 104 common frames omitted
+date:2022-04-01 16:03:43	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Starting MSCodeGatewayApplication using Java 1.8.0_131 on DESKTOP-PFI3VHK with PID 15380 (E:\item\国资\mscode\mscode\target\classes started by 刘道宁 in E:\item\国资\mscode\mscode)
+date:2022-04-01 16:03:43	thread:main	level:DEBUG	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Running with Spring Boot v2.5.4, Spring v5.3.9
+date:2022-04-01 16:03:43	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:The following profiles are active: native
+date:2022-04-01 16:03:54	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:03:54	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:03:54	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:03:54	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:03:54	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:03:54	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] for JDBC transaction
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] to manual commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@4a0d1183]
+date:2022-04-01 16:04:14	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@4a0d1183] after transaction
+date:2022-04-01 16:04:15	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f944b94, org.springframework.security.web.context.SecurityContextPersistenceFilter@32be264e, org.springframework.security.web.header.HeaderWriterFilter@bdc5584, org.springframework.security.web.authentication.logout.LogoutFilter@2810618f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6c2d9f6f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18e6b4e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@485e0996, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60296d11, org.springframework.security.web.session.SessionManagementFilter@4e6b3894, org.springframework.security.web.access.ExceptionTranslationFilter@32ecad28, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47e0aeb5]
+date:2022-04-01 16:04:15	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@515b9a68 with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@203ad254, org.springframework.security.web.context.SecurityContextPersistenceFilter@3296b4ba, org.springframework.security.web.header.HeaderWriterFilter@cc4d929, org.springframework.security.web.authentication.logout.LogoutFilter@3a5beb51, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@503308de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26fddb3f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c5a4358, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20be2d3f, org.springframework.security.web.session.SessionManagementFilter@75689d9c, org.springframework.security.web.access.ExceptionTranslationFilter@5c891ec1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4918f4ad]
+date:2022-04-01 16:04:15	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6444bf53, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ca802e3, org.springframework.security.web.header.HeaderWriterFilter@3aa8ebf9, org.springframework.security.web.csrf.CsrfFilter@4c53ea14, org.springframework.security.web.authentication.logout.LogoutFilter@347d6885, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@439a0f0, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5be0cb4, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@634a3a2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6ac3ce34, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15d313d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68d9d5b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fc3bdb4, org.springframework.security.web.session.SessionManagementFilter@2ff84e42, org.springframework.security.web.access.ExceptionTranslationFilter@77b3c429, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6cc1da7b]
+date:2022-04-01 16:04:15	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@91a7497, org.springframework.security.web.context.SecurityContextPersistenceFilter@15be8dc4, org.springframework.security.web.header.HeaderWriterFilter@5b5db3a, org.springframework.security.web.authentication.logout.LogoutFilter@21f1f60e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@997a59f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2250d39c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4403cf9a, org.springframework.security.web.session.SessionManagementFilter@5406ce9f, org.springframework.security.web.access.ExceptionTranslationFilter@6c8e0773, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a9064b7]
+date:2022-04-01 16:04:18	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Started MSCodeGatewayApplication in 37.768 seconds (JVM running for 39.727)
+date:2022-04-01 16:04:18	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==>  Preparing: SELECT role_code AS "roleCode" FROM mscode_sys_role
+date:2022-04-01 16:04:18	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==> Parameters: 
+date:2022-04-01 16:04:18	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:<==      Total: 7
+date:2022-04-01 16:04:18	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:04:18	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_ADMIN(String)
+date:2022-04-01 16:04:18	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 192
+date:2022-04-01 16:04:18	thread:main	level:ERROR	logger:org.springframework.boot.SpringApplication      	msg:Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:794)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.chinatechstar.MSCodeGatewayApplication.main(MSCodeGatewayApplication.java:48)
+Caused by: redis.clients.jedis.exceptions.JedisDataException: ERR Client sent AUTH, but no password is set
+	at redis.clients.jedis.Protocol.processError(Protocol.java:130)
+	at redis.clients.jedis.Protocol.process(Protocol.java:164)
+	at redis.clients.jedis.Protocol.read(Protocol.java:218)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:341)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:240)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2223)
+	at com.chinatechstar.cache.redis.util.RedisUtils.psetex(RedisUtils.java:31)
+	at com.chinatechstar.MSCodeGatewayApplication.run(MSCodeGatewayApplication.java:71)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:791)
+	... 5 common frames omitted
+date:2022-04-01 16:07:00	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Starting MSCodeGatewayApplication using Java 1.8.0_131 on DESKTOP-PFI3VHK with PID 6316 (E:\item\国资\mscode\mscode\target\classes started by 刘道宁 in E:\item\国资\mscode\mscode)
+date:2022-04-01 16:07:00	thread:main	level:DEBUG	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Running with Spring Boot v2.5.4, Spring v5.3.9
+date:2022-04-01 16:07:00	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:The following profiles are active: native
+date:2022-04-01 16:07:11	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:11	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:11	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:11	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:11	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:11	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] for JDBC transaction
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] to manual commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@72aad5ca]
+date:2022-04-01 16:07:33	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@72aad5ca] after transaction
+date:2022-04-01 16:07:34	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@515576b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@35853c37, org.springframework.security.web.header.HeaderWriterFilter@2aa43751, org.springframework.security.web.authentication.logout.LogoutFilter@282506e1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3b51cbf7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4468fdae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c68550d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@245c8ea5, org.springframework.security.web.session.SessionManagementFilter@5c96d290, org.springframework.security.web.access.ExceptionTranslationFilter@57a36189, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ded49c4]
+date:2022-04-01 16:07:34	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@35cbd595 with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@646c565a, org.springframework.security.web.context.SecurityContextPersistenceFilter@66e1ac9, org.springframework.security.web.header.HeaderWriterFilter@38b06a79, org.springframework.security.web.authentication.logout.LogoutFilter@5ce0b14f, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@763772bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@77e37e59, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cbb217e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78299721, org.springframework.security.web.session.SessionManagementFilter@51c7dfd, org.springframework.security.web.access.ExceptionTranslationFilter@20fa20d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4cd8fa1c]
+date:2022-04-01 16:07:34	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f07d169, org.springframework.security.web.context.SecurityContextPersistenceFilter@6a146acb, org.springframework.security.web.header.HeaderWriterFilter@165348d0, org.springframework.security.web.csrf.CsrfFilter@1253fada, org.springframework.security.web.authentication.logout.LogoutFilter@2fc7698c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1613d1c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@52076187, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4ccda6a9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2465e8be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5fcd665d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5354b0bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44ccebf1, org.springframework.security.web.session.SessionManagementFilter@679cd9c8, org.springframework.security.web.access.ExceptionTranslationFilter@3cc135a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5f33875f]
+date:2022-04-01 16:07:34	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e3578e9, org.springframework.security.web.context.SecurityContextPersistenceFilter@486cb71f, org.springframework.security.web.header.HeaderWriterFilter@1f8825a, org.springframework.security.web.authentication.logout.LogoutFilter@245a06f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12bcedf8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@579347a7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4acdc330, org.springframework.security.web.session.SessionManagementFilter@55117fea, org.springframework.security.web.access.ExceptionTranslationFilter@6407c1b3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79ec9d81]
+date:2022-04-01 16:07:37	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Started MSCodeGatewayApplication in 39.066 seconds (JVM running for 41.135)
+date:2022-04-01 16:07:37	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==>  Preparing: SELECT role_code AS "roleCode" FROM mscode_sys_role
+date:2022-04-01 16:07:37	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==> Parameters: 
+date:2022-04-01 16:07:37	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:<==      Total: 7
+date:2022-04-01 16:07:37	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:07:37	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_ADMIN(String)
+date:2022-04-01 16:07:37	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 192
+date:2022-04-01 16:07:37	thread:main	level:ERROR	logger:org.springframework.boot.SpringApplication      	msg:Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:794)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.chinatechstar.MSCodeGatewayApplication.main(MSCodeGatewayApplication.java:48)
+Caused by: redis.clients.jedis.exceptions.JedisDataException: ERR Client sent AUTH, but no password is set
+	at redis.clients.jedis.Protocol.processError(Protocol.java:130)
+	at redis.clients.jedis.Protocol.process(Protocol.java:164)
+	at redis.clients.jedis.Protocol.read(Protocol.java:218)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:341)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:240)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2223)
+	at com.chinatechstar.cache.redis.util.RedisUtils.psetex(RedisUtils.java:31)
+	at com.chinatechstar.MSCodeGatewayApplication.run(MSCodeGatewayApplication.java:71)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:791)
+	... 5 common frames omitted
+date:2022-04-01 16:08:52	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Starting MSCodeGatewayApplication using Java 1.8.0_131 on DESKTOP-PFI3VHK with PID 3064 (E:\item\国资\mscode\mscode\target\classes started by 刘道宁 in E:\item\国资\mscode\mscode)
+date:2022-04-01 16:08:52	thread:main	level:DEBUG	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Running with Spring Boot v2.5.4, Spring v5.3.9
+date:2022-04-01 16:08:52	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:The following profiles are active: native
+date:2022-04-01 16:09:04	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:04	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:04	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:04	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:04	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:04	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:21	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:22	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fc3bdb4, org.springframework.security.web.context.SecurityContextPersistenceFilter@4499e444, org.springframework.security.web.header.HeaderWriterFilter@72b7eb06, org.springframework.security.web.authentication.logout.LogoutFilter@4cf7f5d8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@439a0f0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bab0d9a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66579498, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b057816, org.springframework.security.web.session.SessionManagementFilter@6cdfae17, org.springframework.security.web.access.ExceptionTranslationFilter@3296b4ba, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@68d9d5b3]
+date:2022-04-01 16:09:22	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@13fd5aaa with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d55b63d, org.springframework.security.web.context.SecurityContextPersistenceFilter@40c0937f, org.springframework.security.web.header.HeaderWriterFilter@997a59f, org.springframework.security.web.authentication.logout.LogoutFilter@7589cfc4, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@4e23fd4f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@21f1f60e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@157e14f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c5432d9, org.springframework.security.web.session.SessionManagementFilter@2250d39c, org.springframework.security.web.access.ExceptionTranslationFilter@15be8dc4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7bd804ed]
+date:2022-04-01 16:09:22	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4396910, org.springframework.security.web.context.SecurityContextPersistenceFilter@716f968a, org.springframework.security.web.header.HeaderWriterFilter@5dd1526e, org.springframework.security.web.csrf.CsrfFilter@37095cad, org.springframework.security.web.authentication.logout.LogoutFilter@3495b709, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@779af906, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@452bddc0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@445ec339, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7b4b2dcd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cc20add, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b577709, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@642c407d, org.springframework.security.web.session.SessionManagementFilter@cfe4f8c, org.springframework.security.web.access.ExceptionTranslationFilter@2e2662d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@100a15a3]
+date:2022-04-01 16:09:22	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e908a0b, org.springframework.security.web.context.SecurityContextPersistenceFilter@713f5a17, org.springframework.security.web.header.HeaderWriterFilter@4c2bcea8, org.springframework.security.web.authentication.logout.LogoutFilter@2cf065e9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15769719, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ba4591, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35853c37, org.springframework.security.web.session.SessionManagementFilter@1af74f3f, org.springframework.security.web.access.ExceptionTranslationFilter@3a9bd6c7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5c96d290]
+date:2022-04-01 16:09:24	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Started MSCodeGatewayApplication in 34.532 seconds (JVM running for 36.266)
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==>  Preparing: SELECT role_code AS "roleCode" FROM mscode_sys_role
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==> Parameters: 
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:<==      Total: 7
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_ADMIN(String)
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 192
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_AGENT(String)
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 191
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_ANONYMOUS(String)
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 9
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_DEV(String)
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 191
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:24	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_MANAGER(String)
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 191
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_REACT_ADMIN(String)
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 192
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_TEST(String)
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 191
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Participating in existing transaction
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] for JDBC transaction
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] to manual commit
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@73db7b1b]
+date:2022-04-01 16:09:25	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@73db7b1b] after transaction
+date:2022-04-01 16:13:05	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Starting MSCodeGatewayApplication using Java 1.8.0_131 on DESKTOP-PFI3VHK with PID 14556 (E:\item\国资\mscode\mscode\target\classes started by 刘道宁 in E:\item\国资\mscode\mscode)
+date:2022-04-01 16:13:05	thread:main	level:DEBUG	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Running with Spring Boot v2.5.4, Spring v5.3.9
+date:2022-04-01 16:13:05	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:The following profiles are active: native
+date:2022-04-01 16:13:17	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:17	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:17	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:17	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:17	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:17	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Creating new transaction with name [null]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Acquired Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] for JDBC transaction
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Switching JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] to manual commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Initiating transaction commit
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Committing JDBC transaction on Connection [oracle.jdbc.driver.T4CConnection@2e9e3172]
+date:2022-04-01 16:13:35	thread:main	level:DEBUG	logger:o.s.jdbc.datasource.DataSourceTransactionManager	msg:Releasing JDBC Connection [oracle.jdbc.driver.T4CConnection@2e9e3172] after transaction
+date:2022-04-01 16:13:36	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36f2a2a3, org.springframework.security.web.context.SecurityContextPersistenceFilter@689cc29a, org.springframework.security.web.header.HeaderWriterFilter@59053522, org.springframework.security.web.authentication.logout.LogoutFilter@6d2a92c2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@329e9ff4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d432f4e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c5a9ddc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dcfa917, org.springframework.security.web.session.SessionManagementFilter@8e39ba9, org.springframework.security.web.access.ExceptionTranslationFilter@102a1a4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d65e8c5]
+date:2022-04-01 16:13:36	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@7e1383f7 with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@790bcc24, org.springframework.security.web.context.SecurityContextPersistenceFilter@56f2cdb5, org.springframework.security.web.header.HeaderWriterFilter@2f57fc23, org.springframework.security.web.authentication.logout.LogoutFilter@726e3907, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@8a5e71b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46c22d8e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56e46791, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@229cf4e7, org.springframework.security.web.session.SessionManagementFilter@1dbf21c5, org.springframework.security.web.access.ExceptionTranslationFilter@1931223f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d0e5fbb]
+date:2022-04-01 16:13:36	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a85a13, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e737ae4, org.springframework.security.web.header.HeaderWriterFilter@471ac7e2, org.springframework.security.web.csrf.CsrfFilter@4d979f76, org.springframework.security.web.authentication.logout.LogoutFilter@1172d47, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2417413c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@46179420, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4f1d97d8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5c7673b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39716249, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28459752, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@511d31a6, org.springframework.security.web.session.SessionManagementFilter@1fee3a40, org.springframework.security.web.access.ExceptionTranslationFilter@559048b3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4731c9af]
+date:2022-04-01 16:13:36	thread:main	level:INFO 	logger:o.s.security.web.DefaultSecurityFilterChain     	msg:Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16e1a441, org.springframework.security.web.context.SecurityContextPersistenceFilter@476bdad6, org.springframework.security.web.header.HeaderWriterFilter@3cf828db, org.springframework.security.web.authentication.logout.LogoutFilter@545dedf4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d7687f9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3035c07c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24e82f43, org.springframework.security.web.session.SessionManagementFilter@45571cc9, org.springframework.security.web.access.ExceptionTranslationFilter@30075210, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1517015c]
+date:2022-04-01 16:13:39	thread:main	level:INFO 	logger:com.chinatechstar.MSCodeGatewayApplication      	msg:Started MSCodeGatewayApplication in 35.799 seconds (JVM running for 37.748)
+date:2022-04-01 16:13:39	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==>  Preparing: SELECT role_code AS "roleCode" FROM mscode_sys_role
+date:2022-04-01 16:13:39	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:==> Parameters: 
+date:2022-04-01 16:13:39	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysRoleMapper.queryRoleCodeList	msg:<==      Total: 7
+date:2022-04-01 16:13:39	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==>  Preparing: SELECT msu.url AS "url" FROM mscode_sys_role_url mur RIGHT JOIN mscode_sys_url msu ON mur.url_id = msu.id RIGHT JOIN mscode_sys_role msr ON mur.role_id = msr.id WHERE msr.role_code = ?
+date:2022-04-01 16:13:39	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:==> Parameters: ROLE_ADMIN(String)
+date:2022-04-01 16:13:39	thread:main	level:DEBUG	logger:c.c.admin.mapper.SysUrlMapper.queryRoleUrl      	msg:<==      Total: 192
+date:2022-04-01 16:13:39	thread:main	level:ERROR	logger:org.springframework.boot.SpringApplication      	msg:Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:794)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.chinatechstar.MSCodeGatewayApplication.main(MSCodeGatewayApplication.java:48)
+Caused by: redis.clients.jedis.exceptions.JedisDataException: ERR Client sent AUTH, but no password is set
+	at redis.clients.jedis.Protocol.processError(Protocol.java:130)
+	at redis.clients.jedis.Protocol.process(Protocol.java:164)
+	at redis.clients.jedis.Protocol.read(Protocol.java:218)
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:341)
+	at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:240)
+	at redis.clients.jedis.BinaryJedis.auth(BinaryJedis.java:2223)
+	at com.chinatechstar.cache.redis.util.RedisUtils.psetex(RedisUtils.java:31)
+	at com.chinatechstar.MSCodeGatewayApplication.run(MSCodeGatewayApplication.java:71)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:791)
+	... 5 common frames omitted

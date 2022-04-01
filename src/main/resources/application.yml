@@ -43,9 +43,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@192.168.68.35:1521:daggfw1
-    username: mscode
-    password: Iq#s602_R
+    url: jdbc:oracle:thin:@192.168.1.58:1521:ORCL
+    username: c##mscode
+    password: 123456
     druid:
       stat-view-servlet:
         enabled: true
@@ -90,7 +90,7 @@ spring:
     static-path-pattern: /static/upload/**
 
 redis:
-  host: 127.0.0.1
+  host: 192.168.1.58
   port: 6379
   password: 123456
   expiredTime: 86400
