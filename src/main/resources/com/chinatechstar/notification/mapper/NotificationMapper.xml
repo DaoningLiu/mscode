@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chinatechstar.notification.mapper.NotificationMapper">
+
+
+
+    <select id="queryNotifications" parameterType="map" resultType="java.util.Map">
+        select t.id,t.title,t.CREATE_TIME,t.UPDATE_TIME,t.CONTENT from
+        (select rownum r,e.* from MSCODE_NOTIFICATION e where rownum <![CDATA[   <=  ]]> #{pageSize}) t where r<![CDATA[   >=  ]]> #{pages}
+        <if test="typeStart != null and typeStart != ''">
+            and  t.TYPE_START = #{typeStart}
+        </if>
+        <if test="id != null and id != ''">
+            and t.id = #{id}
+        </if>
+
+    </select>
+
+    <select id="queryNotification" parameterType="map" resultType="java.util.LinkedHashMap">
+        SELECT CAST(mn.id AS VARCHAR2(18)) AS "id",mn.title AS "title",mn.content AS "content",mn.type AS "type",msdt.dict_name AS "typeCn",mn.priority AS "priority",msdp.dict_name AS "priorityCn",mn.publisher AS "publisher",mn.start_time AS "startTime",mn.end_time AS "endTime",mn.create_time AS "createTime"
+        FROM mscode_notification mn LEFT JOIN mscode_sys_dict msdt ON mn.type = msdt.dict_value AND msdt.dict_type = 'notification' LEFT JOIN mscode_sys_dict msdp ON mn.priority = msdp.dict_value AND msdp.dict_type = 'priority'
+        WHERE 1 = 1
+        <if test="title != null and title != ''">
+            AND mn.title LIKE '%' || #{title} || '%'
+        </if>
+        <if test="content != null and content != ''">
+            AND mn.content LIKE '%' || #{content} || '%'
+        </if>
+        <if test="type != null and type != ''">
+            AND mn.type = #{type}
+        </if>
+        <if test="priority != null and priority != ''">
+            AND mn.priority = #{priority}
+        </if>
+        <if test="publisher != null and publisher != ''">
+            AND mn.publisher LIKE '%' || #{publisher} || '%'
+        </if>
+        <if test="typeStart != null and typeStart != ''">
+            AND mn.type_start = #{typeStart}
+        </if>
+        <if test="sysUserId != null">
+            <![CDATA[
+                AND EXISTS (SELECT 1 FROM mscode_notification_sysuser mns WHERE mn.id = mns.notification_id AND mns.sysuser_id = #{sysUserId,jdbcType=BIGINT})
+            ]]>
+        </if>
+        <!--<if test="tenantCode != null and tenantCode != ''">-->
+            <!--AND mn.tenant_code = #{tenantCode}-->
+        <!--</if>-->
+        <if test="sort != null and sequence != null">
+            ORDER BY "${sort}" ${sequence}
+        </if>
+    </select>
+    
+    <select id="queryHeadNotification" parameterType="Long" resultType="java.util.LinkedHashMap">
+        <![CDATA[
+            SELECT CAST(mn.id AS VARCHAR2(18)) AS "id",mn.title AS "title",mn.content AS "description",mn.type AS "type",TO_CHAR(mn.create_time,'yyyy-MM-dd') AS "datetime"
+            FROM mscode_notification mn
+            WHERE EXISTS (SELECT 1 FROM mscode_notification_sysuser mns WHERE mn.id = mns.notification_id AND mns.sysuser_id = #{sysUserId,jdbcType=BIGINT}) AND ROWNUM <= 6
+            ORDER BY create_time DESC
+        ]]>
+    </select>
+    
+    <select id="querySysUserId" parameterType="Long" resultType="Long">
+        SELECT sysuser_id AS "sysuserId"
+        FROM mscode_notification_sysuser
+        WHERE notification_id = #{notificationId,jdbcType=BIGINT}
+    </select>
+
+    <insert id="insertNotification" parameterType="Notification">
+        INSERT INTO mscode_notification
+            (id, title, content, type, priority, publisher, start_time, end_time, tenant_code, type_start)
+        VALUES
+            (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{priority,jdbcType=VARCHAR}, #{publisher,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{tenantCode,jdbcType=VARCHAR},#{typeStart,jdbcType=BIGINT},)
+    </insert>
+    
+    <insert id="insertNotificationSysUser">
+        INSERT INTO mscode_notification_sysuser
+            (id, notification_id, sysuser_id)
+        VALUES
+            (#{id,jdbcType=BIGINT}, #{notificationId,jdbcType=BIGINT}, #{sysUserId,jdbcType=BIGINT})
+    </insert>
+
+    <update id="updateNotification" parameterType="Notification">
+        UPDATE mscode_notification
+        <set>
+            <if test="title != null and title != ''">title=#{title},</if>
+            <if test="content != null and content != ''">content=#{content},</if>
+            <if test="type != null and type != ''">type=#{type},</if>
+            priority=#{priority,jdbcType=VARCHAR},
+            start_time=#{startTime,jdbcType=TIMESTAMP},
+            end_time=#{endTime,jdbcType=TIMESTAMP}
+        </set>
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+    
+    <delete id="deleteNotification">
+        DELETE FROM mscode_notification WHERE mscode_notification.id IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id,jdbcType=BIGINT}
+        </foreach>
+    </delete>
+    
+    <delete id="deleteNotificationSysUser">
+        DELETE FROM mscode_notification_sysuser WHERE notification_id = #{notificationId,jdbcType=BIGINT}
+    </delete>    
+
+</mapper>
