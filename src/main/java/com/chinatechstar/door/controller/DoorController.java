@@ -2,11 +2,8 @@ package com.chinatechstar.door.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.chinatechstar.component.commons.result.ListResult;
-import com.chinatechstar.component.commons.result.ResultBuilder;
 import com.chinatechstar.door.utils.HttpClientUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -67,5 +64,61 @@ public class DoorController {
         JSONObject jsonObject = HttpClientUtils.httpPost ( url, stringMap );
         return jsonObject;
     }
+
+
+        //----------------------------------------------
+
+    /**
+     * POST 档案资料借阅
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyArchiveBorrow")
+    public JSONObject applyArchiveBorrow(@RequestBody Map<String,String> stringMap){
+        String url = "http://192.168.1.87:8082/archs/public/service/applyArchiveBorrow";
+        JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
+        System.out.println (jsonObject);
+        return jsonObject;
+    }
+
+    /**
+     * POST 医社保借阅申请
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyCHSandSI")
+    public JSONObject applyCHSandSI(@RequestBody Map<String,String> stringMap){
+        String url = "http://192.168.1.87:8082/archs/public/service/applyCHSandSI";
+        JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
+        System.out.println (jsonObject);
+        return jsonObject;
+    }
+
+    /**
+     * POST 政审预约申请
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyInspect")
+    public JSONObject applyInspect(@RequestBody Map<String,String> stringMap){
+        String url = "http://192.168.1.87:8082/archs/public/service/applyInspect";
+        JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
+        System.out.println (jsonObject);
+        return jsonObject;
+    }
+
+    /**
+     * POST 提交预约时间
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("commit/time")
+    public JSONObject commitTime(@RequestBody Map<String,String> stringMap){
+        String url = "http://192.168.1.87:8082/archs/public/service/commit/time";
+        JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
+        System.out.println (jsonObject);
+        return jsonObject;
+    }
+
 
 }
