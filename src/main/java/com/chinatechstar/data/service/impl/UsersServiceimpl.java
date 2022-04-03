@@ -84,13 +84,6 @@ public class UsersServiceimpl implements UsersService {
 
     public static void main(String[] args) throws Exception {
         String text = "我是一段测试aaaa";
-        String encode = Base64.encode ( text );
-        System.out.println (Base64.decodeStr ( encode ));
-        System.out.println (Base64.encode ( text ));
-        byte[] privateKey = Base64.decodeStr ( MyEnum.PRIVATE_KEY.getDesc ()).getBytes ( "UTF-8" );
-        byte[] publicKey = Base64.decodeStr ( MyEnum.PUVBLIC_KEY.getDesc () ).getBytes (  "UTF-8");
-        System.out.println (privateKey);
-        System.out.println (publicKey);
         final byte[] decode = HttpClientUtils.decode ( MyEnum.PRIVATE_KEY.getDesc ());
         final byte[] decodes = HttpClientUtils.decode ( MyEnum.PUVBLIC_KEY.getDesc ());
         System.out.println ("dessssss=========="+decode+"sssssssssss======="+decodes);
