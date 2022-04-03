@@ -18,7 +18,7 @@ public class DoorController {
 
 
 
-    public static void main(String[] args) throws Exception {
+   /* public static void main(String[] args) throws Exception {
         String url = "https://mztapp.fujian.gov.cn:9089/mztsfrz/dataset/AppSerController/invokeservice.do";
         Map<String,Object> paramsMap = new HashMap<String,Object> ();
         paramsMap.put("INVOKESERVICE_CODE","H038");
@@ -31,11 +31,11 @@ public class DoorController {
         String result = HttpClientUtils.sendPostParams (url, clientParam);
         System.out.println(result);
     }
-    /**
+    *//**
      * 个人信息查询
      * @param stringMap
      * @return
-     */
+     *//*
     @PostMapping("getPersonInfo")
     public JSONObject getPersonInfo(@RequestBody Map<String,String> stringMap){
         String url = "http://192.168.1.87:8082/archs/public/service/getPersonInfo";
@@ -43,11 +43,11 @@ public class DoorController {
         return jsonObject;
     }
 
-    /**
+    *//**
      * POST 机构查询
      * @param stringMap
      * @return
-     */
+     *//*
     @PostMapping("queryOrg")
     public JSONObject queryOrg(@RequestBody Map<String,String> stringMap){
         String url = "http://192.168.1.87:8082/archs/public/service/queryOrg";
@@ -66,6 +66,6 @@ public class DoorController {
         String url = "http://192.168.1.87:8082/archs/public/service/downLoadFile";
         JSONObject jsonObject = HttpClientUtils.httpPost ( url, stringMap );
         return jsonObject;
-    }
+    }*/
 
 }

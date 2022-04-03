@@ -1,7 +1,10 @@
 package com.chinatechstar.data.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public interface UsersService {
-    void addUserMassage(HashMap<Object, String> map);
+    HashMap<String, Object> addUserMassage(Map map);
+
+    HashMap<String, Object> addUserMassagesss(Map map);
 }
