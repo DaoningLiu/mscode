@@ -81,12 +81,23 @@ public class UsersServiceimpl implements UsersService {
         useraMapper.addUserMassage ( map );
         return null;
     }
+    public ProsonDateils queryprosoDateils(String userIdcard){
+
+
+        ProsonDateils prosonDateils=useraMapper.queryUserByIdCard(userIdcard);
+
+        return prosonDateils;
+    }
+
+    @Override
+    public void addRecords(Map map) {
+        useraMapper.addRecords(map);
+    }
 
     public static void main(String[] args) throws Exception {
         String text = "我是一段测试aaaa";
-        final byte[] decode = HttpClientUtils.decode ( MyEnum.PRIVATE_KEY.getDesc ());
-        final byte[] decodes = HttpClientUtils.decode ( MyEnum.PUVBLIC_KEY.getDesc ());
-        System.out.println ("dessssss=========="+decode+"sssssssssss======="+decodes);
+        final byte[] decode = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
+        final byte[] decodes = HttpClientUtils.decode ( MyEnum.PUVBLICS_KEY.getDesc ());
         String ssss="048AD9EEC0D14E7A20987C63E6CED805B136A924327BBF0AF8405B20B935E2542D142A8B2494A0F5A03C1CAD4B5498BAEC03AD63802BE31DE8699D014F3D021F42FA238C59D74FD704321BEAED030FDD00B30D7838A5C8457B1BDF7C5836A1E5D6B053EF7C0E421EB6B478B76108871A6FE7FFB8A51C98D872A4EFBEEC166B34E160C02B00166BF284C68891011D686E7C79C43E29724E8ED1DD7E6E6675FB0BE2EF95835E224C06C26077279DCBC71AA9B985B0C26428E244223A86B1C48263E6533B995932A5E2B6D1ADE276A551D682662D5DC5D4E20D9BF2F7985B80A06A6326359A34685898295EF1A5145B749122E702EB12F3C7FBBA319309DE1B5CED6A8E8EB5726C27A2C09CB8CCF161787B6D";
 
         SM2 sm2 = SmUtil.sm2(decode, decodes);
@@ -94,7 +105,7 @@ public class UsersServiceimpl implements UsersService {
         String encryptStr = sm2.encryptBcd(text, KeyType.PublicKey);
         System.out.println (encryptStr);
         //私钥解密
-        String decryptStr = StrUtil.utf8Str(sm2.decryptFromBcd(ssss, KeyType.PrivateKey));
+        String decryptStr = StrUtil.utf8Str(sm2.decryptFromBcd(encryptStr, KeyType.PrivateKey));
         System.out.println (decryptStr);
     }
 }

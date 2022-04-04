@@ -27,4 +27,9 @@ public class UsersController {
         HashMap<String,Object> objectHashMap= usersService.addUserMassagesss(map);
         return ResultBuilder.buildListSuccess ( objectHashMap );
     }
+    @PostMapping("addRecords")
+    public ListResult<Object> addRecords(Map map){
+        usersService.addRecords(map);
+        return ResultBuilder.buildListSuccess ( "新增成功" );
+    }
 }

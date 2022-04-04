@@ -9,4 +9,6 @@ public interface UseraMapper {
     ProsonDateils queryUserByIdCard(String userIdcard);
 
     void addUserMassage(Map map);
+
+    void addRecords(Map map);
 }
