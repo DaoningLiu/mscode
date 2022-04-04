@@ -42,7 +42,8 @@ public class CommonResourceServerConfig extends ResourceServerConfigurerAdapter 
 						"/**/swagger-resources/**", "/**/v2/api-docs/**",
 						// "/**/door/queryOrg","/**/door/getPersonInfo",
 						// "/**/door/uplodfile","/**/door/downLoadFile",
-						"/**/users/addUserMassage",
+						"/**/users/loginUser",
+						"/**/users/test",
 						"/**/static/upload/**", "/**/druid/**", "/**/ureport/**")
 				.permitAll().anyRequest().authenticated().and().csrf().disable();
 	}

@@ -4,12 +4,10 @@ import com.chinatechstar.component.commons.result.ListResult;
 import com.chinatechstar.component.commons.result.ResultBuilder;
 import com.chinatechstar.data.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
@@ -18,9 +16,15 @@ public class UsersController {
     @Autowired
     private UsersService usersService;
 
-    @PostMapping("addUserMassage")
-    public ListResult<Object> addUserMassage(@RequestBody HashMap<Object,String> map){
-        usersService.addUserMassage(map);
-        return ResultBuilder.buildListSuccess ( "成功" );
+    @GetMapping ("loginUser")
+    public ListResult<Object> loginUser(@RequestParam(required = false) Map map){
+        HashMap<String,Object> objectHashMap= usersService.addUserMassage(map);
+        return ResultBuilder.buildListSuccess ( objectHashMap );
+    }
+
+    @GetMapping ("test")
+    public ListResult<Object> test(@RequestParam(required = false) Map map){
+        HashMap<String,Object> objectHashMap= usersService.addUserMassagesss(map);
+        return ResultBuilder.buildListSuccess ( objectHashMap );
     }
 }

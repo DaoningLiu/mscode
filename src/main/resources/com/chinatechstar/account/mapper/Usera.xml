@@ -3,48 +3,45 @@
 
 <mapper namespace="com.chinatechstar.data.mapper.UseraMapper">
   
-    <insert id="addUserMassage" parameterType="java.util.HashMap">
-        INSERT INTO Y_PROSON_DATEILS (
+    <insert id="addUserMassage" parameterType="java.util.Map">
+         insert into  Y_PROSON_DATEILS (
                                 "id",
                                 "person_name",
-                                "person_nation",
-                                "birth_time",
-                                "family_area",
                                 "person_number",
-                                "person_card",
-                                "tall_background",
-                                "register_code",
-                                "present_address",
-                                "email_address",
-                                "company_name",
-                                "credit_code",
-                                "organization_type",
-                                "organization_industry",
-                                "economics_type",
-                                "postal_code"
+                                "person_card"
                             )
                             VALUES
                             (
-                                #{ID},
-                                #{USER_NAME},
-                                #{POPULATION_NATION},
-                                #{POPULATION_BIRTHDAY},
-                                #{POPULATION_HJDZ},
-                                #{USER_MOBILE},
-                                #{USER_IDCARD},
-                                #{POPULATION_EDU},
-                                #{POPULATION_CITYCODE},
-                                #{POPULATION_JZDZ},
-                                #{LEGALPERSON_EMAIL},
-                                #{POPULATION_GZDW},
-                                #{UNI_SCID},
-                                #{LEGALPERSON_ORGTYPE},
-                                #{INDUSTRY},
-                                #{LEGALPERSON_JJLX},
-                                #{LEGALPERSON_ZIPCODE}
+                                #{id,jdbcType=VARCHAR},
+                                #{name,jdbcType=VARCHAR},
+                                #{personNumber,jdbcType=VARCHAR},
+                                #{personCard,jdbcType=VARCHAR}
                             )
 
     </insert>
-
+    <select id="queryUserByIdCard" parameterType="java.lang.String" resultType="com.chinatechstar.data.entity.ProsonDateils">
+        SELECT
+            "id",
+            "person_name",
+            "person_nation",
+            "birth_time",
+            "family_area",
+            "person_number",
+            "person_card",
+            "tall_background",
+            "register_code",
+            "present_address",
+            "email_address",
+            "company_name",
+            "credit_code",
+            "organization_type",
+            "organization_industry",
+            "economics_type",
+            "postal_code"
+        FROM
+            Y_PROSON_DATEILS
+        where
+            "person_card" = #{userIdcard}
+    </select>
 
 </mapper>
