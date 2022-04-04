@@ -1,6 +1,7 @@
 package com.chinatechstar.door.service.impl;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.SM2;
@@ -12,8 +13,10 @@ import com.chinatechstar.door.utils.HttpClientUtils;
 import com.chinatechstar.door.utils.MyEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.misc.BASE64Encoder;
 
 import java.rmi.MarshalledObject;
+import java.security.KeyPair;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,5 +51,22 @@ public class DoorServiceImpl implements DoorService {
         Map maps=jsonObject;
 
         return maps;
+    }
+
+    public static void main(String[] args) {
+        String text = "我是一段测试aaaa";
+
+        KeyPair pair = SecureUtil.generateKeyPair("SM2");
+        byte[] privateKey = pair.getPrivate().getEncoded();
+        byte[] publicKey = pair.getPublic().getEncoded();
+        BASE64Encoder encoder = new BASE64Encoder ();
+        System.out.println (encoder.encode(privateKey)+"后边是公钥");
+        System.out.println (encoder.encode(publicKey));
+        SM2 sm2 = SmUtil.sm2(privateKey, publicKey);
+            // 公钥加密，私钥解密
+        String encryptStr = sm2.encryptBcd(text, KeyType.PublicKey);
+        String decryptStr = StrUtil.utf8Str(sm2.decryptFromBcd(encryptStr, KeyType.PrivateKey));
+       // System.out.println (encryptStr);
+        //System.out.println (decryptStr);
     }
 }
