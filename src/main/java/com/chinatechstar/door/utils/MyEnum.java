@@ -18,6 +18,8 @@ public enum MyEnum {
     FAILED ( "0001", "失败" ),
     PUVBLIC_KEY( "1", "MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEIZR0oo9lbBUZ8U6MgWXV+xBdXoymSzzYHde+BDx+g2k2IcPjuuWZMhyesnVJK5c0HbUPTbm6tyWZdNZmFJ5xbg==" ),
     PRIVATE_KEY( "2", "MIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQgN9SWEergph5xbGBsYKDSXWcNwh9PSQsLmlDWLyJQ54SgCgYIKoEcz1UBgi2hRANCAASC1R+xaxpSuZNINW1sEnf57uGzUmYVjYkpCThvxQgZ8l8Yn8UcrZ+vXvQaI04wegAelesu1w0RADMcuuPoB4Yn" ),
+    PRIVATES_KEY( "2", "" ),
+    PUVBLICS_KEY( "2", "" ),
     ;
 
     //  四、常用工具类

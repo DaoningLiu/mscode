@@ -81,6 +81,18 @@ public class UsersServiceimpl implements UsersService {
         useraMapper.addUserMassage ( map );
         return null;
     }
+    public ProsonDateils queryprosoDateils(String userIdcard){
+
+
+        ProsonDateils prosonDateils=useraMapper.queryUserByIdCard(userIdcard);
+
+        return prosonDateils;
+    }
+
+    @Override
+    public void addRecords(Map map) {
+        useraMapper.addRecords(map);
+    }
 
     public static void main(String[] args) throws Exception {
         String text = "我是一段测试aaaa";

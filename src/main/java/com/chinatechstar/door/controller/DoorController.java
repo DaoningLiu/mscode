@@ -1,12 +1,15 @@
 package com.chinatechstar.door.controller;
 
-import com.alibaba.fastjson.JSON;
+import cn.hutool.crypto.SmUtil;
+import cn.hutool.crypto.asymmetric.KeyType;
+import cn.hutool.crypto.asymmetric.SM2;
 import com.alibaba.fastjson.JSONObject;
-import com.chinatechstar.component.commons.result.ListResult;
-import com.chinatechstar.component.commons.result.ResultBuilder;
+import com.chinatechstar.data.entity.ProsonDateils;
+import com.chinatechstar.door.service.DoorService;
 import com.chinatechstar.door.utils.HttpClientUtils;
+import com.chinatechstar.door.utils.MyEnum;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,10 +18,11 @@ import java.util.Map;
 @RequestMapping("/door")
 public class DoorController {
 
+    @Autowired
+    private DoorService doorService;
 
 
-
-   /* public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         String url = "https://mztapp.fujian.gov.cn:9089/mztsfrz/dataset/AppSerController/invokeservice.do";
         Map<String,Object> paramsMap = new HashMap<String,Object> ();
         paramsMap.put("INVOKESERVICE_CODE","H038");
@@ -30,24 +34,23 @@ public class DoorController {
         clientParam.put("POSTPARAM_JSON", POSTPARAM_JSON);
         String result = HttpClientUtils.sendPostParams (url, clientParam);
         System.out.println(result);
-    }
-    *//**
-     * 个人信息查询
+    }*/
+    /**
+     * 查询办理详情
      * @param stringMap
      * @return
-     *//*
-    @PostMapping("getPersonInfo")
-    public JSONObject getPersonInfo(@RequestBody Map<String,String> stringMap){
-        String url = "http://192.168.1.87:8082/archs/public/service/getPersonInfo";
-        JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
-        return jsonObject;
+     */
+    @PostMapping("queryApplyDetail")
+    public JSONObject getPersonInfo(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.queryApplyDetail(stringMap);
+        return null;
     }
 
-    *//**
+    /**
      * POST 机构查询
      * @param stringMap
      * @return
-     *//*
+     */
     @PostMapping("queryOrg")
     public JSONObject queryOrg(@RequestBody Map<String,String> stringMap){
         String url = "http://192.168.1.87:8082/archs/public/service/queryOrg";
@@ -66,6 +69,6 @@ public class DoorController {
         String url = "http://192.168.1.87:8082/archs/public/service/downLoadFile";
         JSONObject jsonObject = HttpClientUtils.httpPost ( url, stringMap );
         return jsonObject;
-    }*/
+    }
 
 }
