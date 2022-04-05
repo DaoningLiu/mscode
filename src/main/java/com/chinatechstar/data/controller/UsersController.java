@@ -39,4 +39,10 @@ public class UsersController {
 
         return usersService.getRecords(map);
     }
+
+    @PostMapping("updateRecords")
+    public ListResult<Object> updateRecords(@RequestBody Records records){
+        usersService.updateRecords(records);
+        return ResultBuilder.buildListSuccess ( "修改成功" );
+    }
 }
