@@ -43,7 +43,18 @@
         where
             "person_card" = #{userIdcard}
     </select>
-    <insert id="addRecords" parameterType="java.util.Map">
+    <select id="getRecords" parameterType="java.util.Map" resultType="com.chinatechstar.data.entity.Records">
+        SELECT
+            "id", "ddc001", "ddc002", "ddc003", "ddc004", "accab19", "materialType", "records_text", "user_id" as userId ,"user_code" as userCode
+        FROM
+            "y_records"
+        where
+            "user_id" = #{userId}
+            and
+             "user_code" = #{userCode}
+
+    </select>
+    <insert id="addRecords" parameterType="com.chinatechstar.data.entity.Records">
         INSERT INTO "y_records" ( "id", "ddc001", "ddc002", "ddc003", "ddc004", "accab19", "materialType", "records_text", "user_id" )
 VALUES
 	( #{id}, #{ddc001}, #{ddc002}, #{ddc003}, #{ddc004}, #{accab19}, #{materialType}, #{recordsText}, #{userId} )

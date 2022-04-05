@@ -6,7 +6,9 @@ import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.SM2;
 import com.alibaba.fastjson.JSON;
+import com.chinatechstar.component.commons.result.ListResult;
 import com.chinatechstar.data.entity.ProsonDateils;
+import com.chinatechstar.data.entity.Records;
 import com.chinatechstar.data.mapper.UseraMapper;
 import com.chinatechstar.data.service.UsersService;
 import com.chinatechstar.data.util.NewRandomCode;
@@ -90,8 +92,13 @@ public class UsersServiceimpl implements UsersService {
     }
 
     @Override
-    public void addRecords(Map map) {
-        useraMapper.addRecords(map);
+    public void addRecords(Records records) {
+        useraMapper.addRecords(records);
+    }
+
+    @Override
+    public Records getRecords(Map map) {
+        return useraMapper.getRecords(map);
     }
 
     public static void main(String[] args) throws Exception {
