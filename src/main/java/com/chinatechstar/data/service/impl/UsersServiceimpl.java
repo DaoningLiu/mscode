@@ -58,7 +58,7 @@ public class UsersServiceimpl implements UsersService {
             String useraccount = data.get ( "USER_ACCOUNT" ).toString ();
             ProsonDateils prosonDateils=useraMapper.queryUserByIdCard(userIdcard);
             HashMap<String, Object> hashMap = new HashMap<String, Object>();
-            String s = NewRandomCode.getNewRandomCode ( 18 ).toString ();
+            String s = NewRandomCode.getNewRandomCode ( 18 );
             if (prosonDateils == null){
                 hashMap.put ("ID",s);
                 Map map1=new HashMap<String,String> ();

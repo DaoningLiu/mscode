@@ -56,8 +56,8 @@
     </select>
     <insert id="addRecords" parameterType="com.chinatechstar.data.entity.Records">
         INSERT INTO "y_records" ( "id", "ddc001", "ddc002", "ddc003", "ddc004", "accab19", "materialType", "records_text", "user_id" )
-VALUES
-	( #{id}, #{ddc001}, #{ddc002}, #{ddc003}, #{ddc004}, #{accab19}, #{materialType}, #{recordsText}, #{userId} )
+    VALUES
+        ( #{id}, #{ddc001}, #{ddc002}, #{ddc003}, #{ddc004}, #{accab19}, #{materialType}, #{recordsText}, #{userId} )
     </insert>
 
 </mapper>
