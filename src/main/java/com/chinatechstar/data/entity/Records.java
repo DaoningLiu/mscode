@@ -15,6 +15,15 @@ public class Records extends TimeEntity implements Serializable {
     private String materialType;
     private String recordsText;
     private String userId;
+    private String userCode;
+
+    public String getUserCode() {
+        return userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
+    }
 
     public String getId() {
         return id;
