@@ -33,6 +33,11 @@ public class UsersController {
         usersService.addRecords(records);
         return ResultBuilder.buildListSuccess ( "新增成功" );
     }
+    @GetMapping("getRecords")
+    public Records getRecords(@RequestParam (required = false) Map map){
+
+        return usersService.getRecords(map);
+    }
 
     @GetMapping("getRecords")
     public Records getRecords(@RequestParam (required = false) Map map){

@@ -43,6 +43,31 @@
         where
             "person_card" = #{userIdcard}
     </select>
+    <select id="queryUserByIdCards" parameterType="java.lang.String" resultType="com.chinatechstar.data.entity.ProsonDateils">
+        SELECT
+            "id",
+            "person_name" as personName,
+            "person_nation",
+            "birth_time",
+            "family_area",
+            "person_number" as personNumber,
+            "person_card" as personCard,
+            "tall_background",
+            "register_code",
+            "present_address",
+            "email_address",
+            "company_name",
+            "credit_code",
+            "organization_type",
+            "organization_industry",
+            "economics_type",
+            "postal_code"
+        FROM
+            Y_PROSON_DATEILS
+        where
+            "id" = #{userIdcard}
+    </select>
+    <insert id="addRecords" parameterType="java.util.Map">
     <select id="getRecords" parameterType="java.util.Map" resultType="com.chinatechstar.data.entity.Records">
         SELECT
             "id", "ddc001", "ddc002", "ddc003", "ddc004", "accab19", "materialType", "records_text", "user_id" as userId ,"user_code" as userCode

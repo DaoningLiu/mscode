@@ -45,6 +45,8 @@ public class CommonResourceServerConfig extends ResourceServerConfigurerAdapter 
 						"/**/users/loginUser",
 						"/**/users/addRecords",
 						"/**/users/getRecords",
+						"/**/door/queryApplyDetail",
+						"/**/users/getRecords",
 						"/**/static/upload/**", "/**/druid/**", "/**/ureport/**")
 				.permitAll().anyRequest().authenticated().and().csrf().disable();
 	}

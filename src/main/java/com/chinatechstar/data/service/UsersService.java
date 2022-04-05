@@ -14,6 +14,9 @@ public interface UsersService {
 
 
     public ProsonDateils queryprosoDateils(String userIdcard);
+    public ProsonDateils queryprosoDateilss(String userIdcard);
+
+    void addRecords(Map map);
 
     void addRecords(Records records);
 

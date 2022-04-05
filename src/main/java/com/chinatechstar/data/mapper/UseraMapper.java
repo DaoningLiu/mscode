@@ -12,6 +12,10 @@ public interface UseraMapper {
 
     void addUserMassage(Map map);
 
+    void addRecords(Map map);
+
+
+    ProsonDateils queryUserByIdCards(String userIdcard);
     void addRecords(Records records);
 
     Records getRecords(Map map);
