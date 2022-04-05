@@ -18,4 +18,6 @@ public interface UsersService {
     void addRecords(Records records);
 
     Records getRecords(Map map);
+
+    void updateRecords(Records records);
 }

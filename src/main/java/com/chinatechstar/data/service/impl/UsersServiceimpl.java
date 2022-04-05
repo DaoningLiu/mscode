@@ -101,6 +101,11 @@ public class UsersServiceimpl implements UsersService {
         return useraMapper.getRecords(map);
     }
 
+    @Override
+    public void updateRecords(Records records) {
+        useraMapper.updateRecords(records);
+    }
+
     public static void main(String[] args) throws Exception {
         String text = "我是一段测试aaaa";
         final byte[] decode = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
