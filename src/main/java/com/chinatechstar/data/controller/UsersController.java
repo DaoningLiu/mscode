@@ -2,7 +2,6 @@ package com.chinatechstar.data.controller;
 
 import com.chinatechstar.component.commons.result.ListResult;
 import com.chinatechstar.component.commons.result.ResultBuilder;
-import com.chinatechstar.data.entity.Records;
 import com.chinatechstar.data.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,19 +28,8 @@ public class UsersController {
         return ResultBuilder.buildListSuccess ( objectHashMap );
     }
     @PostMapping("addRecords")
-    public ListResult<Object> addRecords(@RequestBody Records records){
-        usersService.addRecords(records);
+    public ListResult<Object> addRecords(Map map){
+        usersService.addRecords(map);
         return ResultBuilder.buildListSuccess ( "新增成功" );
-    }
-    @GetMapping("getRecords")
-    public Records getRecords(@RequestParam (required = false) Map map){
-
-        return usersService.getRecords(map);
-    }
-
-    @GetMapping("getRecords")
-    public Records getRecords(@RequestParam (required = false) Map map){
-
-        return usersService.getRecords(map);
     }
 }

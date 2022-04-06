@@ -13,12 +13,14 @@ public interface UsersService {
     HashMap<String, Object> addUserMassagesss(Map map);
 
 
-    public ProsonDateils queryprosoDateils(String userIdcard);
-    public ProsonDateils queryprosoDateilss(String userIdcard);
+    ProsonDateils queryprosoDateils(String userIdcard);
 
     void addRecords(Map map);
 
-    void addRecords(Records records);
 
     Records getRecords(Map map);
+
+    ProsonDateils queryUserById(String userIdcard);
+
+    void updateRecords(Map map);
 }

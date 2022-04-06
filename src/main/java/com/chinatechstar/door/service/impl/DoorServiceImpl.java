@@ -1,9 +1,12 @@
 package com.chinatechstar.door.service.impl;
 
+import cn.hutool.core.util.HexUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.SM2;
+import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.chinatechstar.data.entity.ProsonDateils;
 import com.chinatechstar.data.entity.Records;
@@ -13,8 +16,14 @@ import com.chinatechstar.door.service.DoorService;
 import com.chinatechstar.door.utils.HttpClientUtils;
 import com.chinatechstar.door.utils.MyEnum;
 import com.google.gson.Gson;
+import org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.misc.BASE64Encoder;
+
+import java.security.KeyPair;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,115 +41,175 @@ public class DoorServiceImpl implements DoorService {
      */
     @Override
     public Map queryApplyDetail(Map<String, String> stringMap) throws Exception {
-        //生成url访问接口
-        String url = "http://192.168.1.87:8082/archs/public/service/queryApplyDetail";
-        //获取前端传过来的数据
-        String data = stringMap.get ( "data" );
-        //获取自己使用的私钥用于解密前端数据
-        final byte[] privatesKey = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
-        //将私钥放到sm2里便于使用，当前不需要公钥所以就以null代替
-        SM2 sm2s = SmUtil.sm2(privatesKey, null);
-        //私钥解密
-        Map decryptStr = retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2s.decryptFromBcd(data, KeyType.PrivateKey)) ).toString ()) ;
-
-
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/queryApplyDetail" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //根据前端传过来的数据查询当前操作数据
-        ProsonDateils prosonDateils=usersService.queryprosoDateilss (stringMap.get ( "userIdcard" ));
+        ProsonDateils prosonDateils=usersService.queryUserById (stringMap.get ( "userIdcard" ));
         //获取当前用户身份证号用于访问银海接口
-        decryptStr.put ( "userNo",prosonDateils.getPersonCard () );
-        //new一个map用于访问接口因为加密数据里本身就是一个map以data定义的key，value对
+        mapKey.put ( "personCard",prosonDateils.getPersonCard ()  );
+        //定义银海访问接口所需参宿
+        Map paramsMapss = new HashMap ();
+        //将身份证号码传入
+        paramsMapss.put ( "userNo",prosonDateils.getPersonNation ());
+        //将用户id传入
+        paramsMapss.put ( "eventId",decryptStr.get ("eventId") );
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(paramsMapss ));
+        //访问他们的接口接收返回值
+        Map yhMap = jsonObject ( mapKey );
+        Map map =new HashMap ();
+        //银海返回值所以数据
+        map.put ( "yhtext",yhMap.toString () );
+        //前端传过来的加密字符串
+        map.put ( "data",stringMap.get ( "data" ) );
+        //获取用户id
+        map.put ( "userIdcard",stringMap.get ( "userIdcard" ));
+        //定义一个自己接口的状态码用于区分不同接口
+        map.put ( "userCode","101" );
+        //执行判断自己数据库是否有属于这个接口的操作记录，返回值之后如果数据不全自行获取
+        Map returnMap = getReturnMap ( map );
+        return returnMap;
+    }
+
+    static Map jsonObject(Map map) throws Exception {
+        //生成url访问接口
+        String url = map.get("url").toString ();
         Map paramsMap = new HashMap ();
         //获取银海的公钥私钥
         final byte[] privateKey = HttpClientUtils.decode ( MyEnum.PRIVATE_KEY.getDesc ());
         final byte[] pulicKey = HttpClientUtils.decode ( MyEnum.PUVBLIC_KEY.getDesc ());
         //将银海的公钥私钥放入sm2对象中用于加密咱们的数据访问他们的 数据，解密他们返回的数据库
         SM2 sm2 = SmUtil.sm2(privateKey, pulicKey);
+        //System.out.println ("dddddddddddddd"+ map.get ( "yhPost" ).toString ());
         // 公钥加密
-        String encryptStr = sm2.encryptBcd(decryptStr.toString (), KeyType.PublicKey);
+        String encryptStr = sm2.encryptBcd( map.get ( "yhPost" ).toString (), KeyType.PublicKey);
         //将加密的数据放入新建的map里加密数据为value，data为key
         paramsMap.put ( "data",encryptStr );
+        //System.out.println ("加密和要去请求数据格式"+JSONUtils.toJSONString(paramsMap));
         //访问他们的接口接收返回值
         JSONObject jsonObject = HttpClientUtils.httpPost ( url, paramsMap );
-        System.out.println (jsonObject);
-        //获取银海接口返回的加密字符串
         String datas = jsonObject.get ( "data" ).toString ();
-        //私钥解密，并将解密完成的数据强转成字符串
+        Map datass = new HashMap ();
         if(datas.length ()>4){
-            Map datass =  retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2.decryptFromBcd(datas, KeyType.PrivateKey))).toString ());
+            datass =  retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2.decryptFromBcd(datas, KeyType.PrivateKey))).toString ());
 
         }
-        //通过user_id,user_code查询当前用户是否有当前业务炒作记录
-        Map map =new HashMap ();
+        return datass;
+    }
+    static Map getMapToString(String string) throws Exception {
+        final byte[] privatesKey = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
+        //将私钥放到sm2里便于使用，当前不需要公钥所以就以null代替
+        SM2 sm2s = SmUtil.sm2(privatesKey, null);
+        //私钥解密
+        Map decryptStr = retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2s.decryptFromBcd(string, KeyType.PrivateKey)) ).toString ()) ;
+
+
+        return decryptStr;
+    }
+     Map getReturnMap(Map maps) throws Exception {
+        ProsonDateils prosonDateils=usersService.queryUserById (maps.get ( "userIdcard" ).toString ());
+        Map decryptStr = getMapToString (maps.get ( "data" ).toString ()  );
         Map mapQuery =new HashMap ();
         mapQuery.put ( "userId",prosonDateils.getId ());
-        mapQuery.put ( "userCode","101" );
+        mapQuery.put ( "userCode",maps.get ( "userCode" ) );
         Records records = usersService.getRecords ( mapQuery );
+        Map map = new HashMap ();
+        Map mapkey = new HashMap ();
         if(records == null ){
             Date date = new Date ();
             SimpleDateFormat simpleDateFormat =new SimpleDateFormat ("yyyy-mm-ss hh:mm");
-            map.put ( "id",NewRandomCode.getNewRandomCode ( 18 ) );
-            map.put ( "accab19", simpleDateFormat.format ( date ));
-            map.put ( "ddc001", decryptStr.get ( "ddc001" ) .toString ());
+            mapkey.put ( "id",NewRandomCode.getNewRandomCode ( 18 ) );
+            mapkey.put ( "accab19", simpleDateFormat.format ( date ));
+            mapkey.put ( "ddc001", decryptStr.get ( "ddc001" ) .toString ());
             if(decryptStr.get ( "ddc002" ) .toString ()==null){
-                map.put ( "ddc002", prosonDateils.getPersonName ());
-                map.put ( "ddc003", prosonDateils.getPersonCard ());
-                map.put ( "ddc004", prosonDateils.getPersonNumber ().toString ());
+                mapkey.put ( "ddc002", prosonDateils.getPersonName ());
+                mapkey.put ( "ddc003", prosonDateils.getPersonCard ());
+                mapkey.put ( "ddc004", prosonDateils.getPersonNumber ().toString ());
             }else{
-                map.put ( "ddc002", decryptStr.get ( "ddc002" ) .toString ());
-                map.put ( "ddc003", decryptStr.get ( "ddc003" ) .toString ());
-                map.put ( "ddc004", decryptStr.get ( "ddc004" ) .toString ());
+                mapkey.put ( "ddc002", decryptStr.get ( "ddc002" ) .toString ());
+                mapkey.put ( "ddc003", decryptStr.get ( "ddc003" ) .toString ());
+                mapkey.put ( "ddc004", decryptStr.get ( "ddc004" ) .toString ());
             }
-            map.put ( "materialType", decryptStr.get ( "materialType" ).toString ());
-            map.put ( "recordsText", datas.toString ());
-            map.put ( "userId", prosonDateils.getId ());
-            map.put ( "userCode", "101");
-            usersService.addRecords ( map );
+            mapkey.put ( "materialType", decryptStr.get ( "materialType" ).toString ());
+            mapkey.put ( "recordsText", maps.get ( "yhtext" ));
+            mapkey.put ( "userId", prosonDateils.getId ());
+            mapkey.put ( "userCode", "101");
+            usersService.addRecords ( mapkey );
+            map.put ( "recordsText", maps.get ( "yhtext" ));
             map.put ( "ddc003",new StringBuilder (prosonDateils.getPersonCard ()).replace ( 2,16,"**************" ) );
             map.put ( "ddc002",new StringBuilder (decryptStr.get ( "ddc002" ) .toString ()).replace ( 1,2,"*" ) );
             map.put ( "ddc004",new StringBuilder (decryptStr.get ( "ddc004" ) .toString ()).replace ( 3,7,"****" ) );
             map.put ( "idCard",new StringBuilder (prosonDateils.getPersonCard () ).replace ( 2,16,"**************" ) );
             map.put ( "name",new StringBuilder (prosonDateils.getPersonName ()).replace ( 1,2,"*" ) );
-            map.put ( "personNumber",new StringBuilder (prosonDateils.getPersonNumber ()).replace ( 3,7,"****" ) );
+            map.put ( "personNumber",new StringBuilder (prosonDateils.getPersonNation ()).replace ( 3,7,"****" ) );
             return map;
         }else{
             //差个id赋值
-            map.put ( "userId",prosonDateils.getId () );
-            map.put ( "userCode","101");
-            map.put ( "recordsText", datas.toString ());
-            map.put ( "ddc003",new StringBuilder (prosonDateils.getPersonCard ()).replace ( 2,16,"**************" ) );
-            map.put ( "ddc002",new StringBuilder (decryptStr.get ( "ddc002" ) .toString ()).replace ( 1,2,"*" ) );
-            map.put ( "ddc004",new StringBuilder (decryptStr.get ( "ddc004" ) .toString ()).replace ( 3,7,"****" ) );
+            mapkey.put ( "userId",prosonDateils.getId () );
+           // map.put ( "userCode","101");
+            mapkey.put ( "id", records.getId ());
+            mapkey.put ( "recordsText", maps.get ( "yhtext" ));
+            usersService.updateRecords(mapkey);
+            map.put ( "recordsText", maps.get ( "yhtext" ));
+            map.put ( "ddc003",new StringBuilder (records.getDdc003 ()).replace ( 2,16,"**************" ) );
+            map.put ( "ddc002",new StringBuilder (records.getDdc002 ()).replace ( 1,2,"*" ) );
+            map.put ( "ddc004",new StringBuilder (records.getDdc004 ()).replace ( 3,7,"****" ) );
             map.put ( "idCard",new StringBuilder (prosonDateils.getPersonCard () ).replace ( 2,16,"**************" ) );
             map.put ( "name",new StringBuilder (prosonDateils.getPersonName ()).replace ( 1,2,"*" ) );
-            map.put ( "personNumber",new StringBuilder (prosonDateils.getPersonNumber ()).replace ( 3,7,"****" ) );
+            map.put ( "personNumber",new StringBuilder (prosonDateils.getPersonNation ()).replace ( 3,7,"****" ) );
             return map;
         }
     }
 
-    public static void main(String[] args) {
-       String jsonString = "{\"eventId\": \"bffd619f76d84505b8c13d6c67583c84\"}";
-        Gson gson = new Gson();
-        Map<String, Object> map = new HashMap<String, Object>();
-        map = gson.fromJson(jsonString, map.getClass());
-        System.out.println("map的值为:"+map.get("eventId"));
 
 
-        /*String text = "我是一段测试aaaa";
+
+
+   /* public static void main(String[] args) {
+        *//*SM2 sm2= SmUtil.sm2();
+        String publicKey=sm2.getPublicKeyBase64();
+        String privateKey=sm2.getPrivateKeyBase64();
+        System.out.println ("pub"+publicKey);
+        System.out.println ("private"+privateKey);
+        String s = HexUtil.encodeHexStr ( ((BCECPublicKey) sm2.getPublicKey ()).getQ ().getEncoded ( false ) );
+        System.out.println ("前端"+s);*//*
+
 
         KeyPair pair = SecureUtil.generateKeyPair("SM2");
-        byte[] privateKey = pair.getPrivate().getEncoded();
-        byte[] publicKey = pair.getPublic().getEncoded();
+        PrivateKey aPrivate = pair.getPrivate();
+        byte[] privateKey = aPrivate.getEncoded();//解密时需要用到
+
+        PublicKey aPublic = pair.getPublic();
+        byte[] publicKey = aPublic.getEncoded();//解密时需要用到
+        System.out.println (privateKey);
+        System.out.println (publicKey);
+        //将q值提取出来并且转成16进制
+        String q = HexUtil.encodeHexStr(((BCECPublicKey)aPublic).getQ().getEncoded(false));
+        System.out.println ("公钥16进制"+q);
+
+
+        String text = "我是一段测试aaaa";
+
+        //KeyPair pair = SecureUtil.generateKeyPair("SM2");
+        //byte[] privateKey = pair.getPrivate().getEncoded();
+        //byte[] publicKey = pair.getPublic().getEncoded();
         BASE64Encoder encoder = new BASE64Encoder ();
         System.out.println ("二进制++++++======="+privateKey.toString ());
-        System.out.println (encoder.encode(privateKey)+"后边是公钥");
-        System.out.println (encoder.encode(publicKey));
+        System.out.println ("私钥==="+encoder.encode(privateKey));
+        System.out.println ("公钥==="+encoder.encode(publicKey));
         SM2 sm2 = SmUtil.sm2(privateKey, publicKey);
             // 公钥加密，私钥解密
         String encryptStr = sm2.encryptBcd(text, KeyType.PublicKey);
-        String decryptStr = StrUtil.utf8Str(sm2.decryptFromBcd(encryptStr, KeyType.PrivateKey));*/
-       // System.out.println (encryptStr);
-        //System.out.println (decryptStr);*/
-    }
+        String decryptStr = StrUtil.utf8Str(sm2.decryptFromBcd(encryptStr, KeyType.PrivateKey));
+        System.out.println (encryptStr);
+        System.out.println (decryptStr);
+    }*/
     public static Map retunMap(String jsonString){
         Gson gson = new Gson();
         Map<String, Object> map = new HashMap<String, Object>();

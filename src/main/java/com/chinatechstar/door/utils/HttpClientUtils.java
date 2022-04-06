@@ -1,6 +1,7 @@
 package com.chinatechstar.door.utils;
 
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.http.Consts;
@@ -79,7 +80,8 @@ public class HttpClientUtils {
             if (null != stringMap)
             {
                 // 解决中文乱码问题
-                StringEntity entity = new StringEntity(stringMap.toString (), "utf-8");
+                StringEntity entity = new StringEntity( JSONUtils.toJSONString(stringMap), "utf-8");
+                //System.out.println (JSONUtils.toJSONString(stringMap));
                 entity.setContentEncoding("UTF-8");
                 entity.setContentType("application/json");
                 httpPost.setEntity(entity);
