@@ -2,6 +2,7 @@ package com.chinatechstar.data.controller;
 
 import com.chinatechstar.component.commons.result.ListResult;
 import com.chinatechstar.component.commons.result.ResultBuilder;
+import com.chinatechstar.data.entity.Records;
 import com.chinatechstar.data.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

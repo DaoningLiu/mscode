@@ -45,6 +45,7 @@ public class CommonResourceServerConfig extends ResourceServerConfigurerAdapter 
 						"/**/users/loginUser",
 						"/**/users/addRecords",
 						"/**/users/getRecords",
+						"/**/users/updateRecords",
 						"/**/door/queryApplyDetail",
 						"/**/users/getRecords",
 						"/**/static/upload/**", "/**/druid/**", "/**/ureport/**")
