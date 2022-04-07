@@ -46,7 +46,6 @@ public class DoorController {
         return map;
     }
 
-
     //POST 档案资料借阅
     //POST /public/service/applyArchiveBorrow
     /**
@@ -73,7 +72,6 @@ public class DoorController {
         return map;
     }
 
-
     //POST 政审预约申请
     //POST /public/service/applyInspect
     /**
@@ -87,7 +85,6 @@ public class DoorController {
         return map;
     }
 
-
     //POST 提交预约时间
     //POST /public/service/commit/time
     /**
@@ -100,12 +97,6 @@ public class DoorController {
         Map map =doorService.commitTime(stringMap);
         return map;
     }
-
-
-
-
-
-
 
     /**
      * POST 机构查询
