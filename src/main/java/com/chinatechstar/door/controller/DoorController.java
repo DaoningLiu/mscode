@@ -46,6 +46,67 @@ public class DoorController {
         return map;
     }
 
+
+    //POST 档案资料借阅
+    //POST /public/service/applyArchiveBorrow
+    /**
+     * 档案资料借阅
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyArchiveBorrow")
+    public Map applyArchiveBorrow(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.applyArchiveBorrow(stringMap);
+        return map;
+    }
+
+    //POST 医社保借阅申请
+    //POST /public/service/applyCHSandSI
+    /**
+     * 医社保借阅申请
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyCHSandSI")
+    public Map applyCHSandSI(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.applyCHSandSI(stringMap);
+        return map;
+    }
+
+
+    //POST 政审预约申请
+    //POST /public/service/applyInspect
+    /**
+     * 政审预约申请
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyInspect")
+    public Map applyInspect(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.applyInspect(stringMap);
+        return map;
+    }
+
+
+    //POST 提交预约时间
+    //POST /public/service/commit/time
+    /**
+     * 提交预约时间
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("commit/time")
+    public Map commitTime(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.commitTime(stringMap);
+        return map;
+    }
+
+
+
+
+
+
+
     /**
      * POST 机构查询
      * @param stringMap

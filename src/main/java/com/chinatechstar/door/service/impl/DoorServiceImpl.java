@@ -77,6 +77,104 @@ public class DoorServiceImpl implements DoorService {
         return returnMap;
     }
 
+
+    //POST 档案资料借阅
+    //POST /public/service/applyArchiveBorrow
+    /**
+     * 档案资料借阅
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map applyArchiveBorrow(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/applyArchiveBorrow" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+
+    //POST 医社保借阅申请
+    //POST /public/service/applyCHSandSI
+    /**
+     * 医社保借阅申请
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map applyCHSandSI(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/applyCHSandSI" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+
+    //POST 政审预约申请
+    //POST /public/service/applyInspect
+    /**
+     * 政审预约申请
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map applyInspect(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/applyInspect" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+
+    //POST 提交预约时间
+    //POST /public/service/commit/time
+    /**
+     * 提交预约时间
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map commitTime(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/commit/time" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+
+
     static Map jsonObject(Map map) throws Exception {
         //生成url访问接口
         String url = map.get("url").toString ();
