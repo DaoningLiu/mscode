@@ -113,7 +113,6 @@ public class DoorServiceImpl implements DoorService {
         //传入要访问的接口路径
         mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyCHSandSI" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
-        mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
@@ -142,7 +141,6 @@ public class DoorServiceImpl implements DoorService {
         //传入要访问的接口路径
         mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyInspect" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
-        mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
@@ -171,7 +169,6 @@ public class DoorServiceImpl implements DoorService {
         //传入要访问的接口路径
         mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/commit/time" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
-        mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
