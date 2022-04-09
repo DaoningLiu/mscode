@@ -1,8 +1,6 @@
 package com.chinatechstar.door.service.impl;
 
-import cn.hutool.core.util.HexUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.SmUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.SM2;
@@ -16,14 +14,8 @@ import com.chinatechstar.door.service.DoorService;
 import com.chinatechstar.door.utils.HttpClientUtils;
 import com.chinatechstar.door.utils.MyEnum;
 import com.google.gson.Gson;
-import org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPublicKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.misc.BASE64Encoder;
-
-import java.security.KeyPair;
-import java.security.PrivateKey;
-import java.security.PublicKey;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -44,13 +36,13 @@ public class DoorServiceImpl implements DoorService {
         //调用银海接口所需要的数据
         Map mapKey =new HashMap ();
         //传入要访问的接口路径
-        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/queryApplyDetail" );
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/queryApplyDetail" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
         mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //根据前端传过来的数据查询当前操作数据
-        ProsonDateils prosonDateils=usersService.queryUserById (stringMap.get ( "userIdcard" ));
+        ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
         //获取当前用户身份证号用于访问银海接口
         mapKey.put ( "personCard",prosonDateils.getPersonCard ()  );
         //定义银海访问接口所需参宿
@@ -90,7 +82,7 @@ public class DoorServiceImpl implements DoorService {
         //调用银海接口所需要的数据
         Map mapKey =new HashMap ();
         //传入要访问的接口路径
-        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/applyArchiveBorrow" );
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyArchiveBorrow" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
         mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
@@ -114,7 +106,7 @@ public class DoorServiceImpl implements DoorService {
         //调用银海接口所需要的数据
         Map mapKey =new HashMap ();
         //传入要访问的接口路径
-        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/applyCHSandSI" );
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyCHSandSI" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
         mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
@@ -138,7 +130,7 @@ public class DoorServiceImpl implements DoorService {
         //调用银海接口所需要的数据
         Map mapKey =new HashMap ();
         //传入要访问的接口路径
-        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/applyInspect" );
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyInspect" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
         mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
@@ -162,7 +154,72 @@ public class DoorServiceImpl implements DoorService {
         //调用银海接口所需要的数据
         Map mapKey =new HashMap ();
         //传入要访问的接口路径
-        mapKey.put ( "url","http://192.168.1.87:8082/archs/public/service/commit/time" );
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/commit/time" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+    /**x`
+     * 档案转递材料补充提交
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map applyFileCommitment(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyFileCommitment" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //根据前端传过来的数据查询当前操作数据
+        ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+    /**
+     * 档案资料复印
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map applyCopy(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyCopy" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+    /**
+     * 档案材料补充申请
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map supplementaryDossier(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/supplementaryDossier" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
         mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
@@ -196,7 +253,6 @@ public class DoorServiceImpl implements DoorService {
         Map datass = new HashMap ();
         if(datas.length ()>4){
             datass =  retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2.decryptFromBcd(datas, KeyType.PrivateKey))).toString ());
-
         }
         return datass;
     }
@@ -264,8 +320,6 @@ public class DoorServiceImpl implements DoorService {
             return map;
         }
     }
-
-
 
 
 

@@ -1,6 +1,5 @@
 package com.chinatechstar.data.mapper;
 
-import com.chinatechstar.component.commons.result.ListResult;
 import com.chinatechstar.data.entity.ProsonDateils;
 import com.chinatechstar.data.entity.Records;
 

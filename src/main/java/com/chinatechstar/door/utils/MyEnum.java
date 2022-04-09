@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
 public enum MyEnum {
     //  三、枚举成员
     SUCCESS ( "0000", "成功" ),
+    YH_URL("999","http://192.168.1.87:8082"),
     ORGANI_ZATION ("1000","/public/service/queryOrg"),
     LOG_IN("10001","https://mztapp.fujian.gov.cn:8304/dataset/AppSerController/invokeservice.do"),
     FAILED ( "0001", "失败" ),

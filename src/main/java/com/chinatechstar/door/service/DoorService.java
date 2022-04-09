@@ -9,4 +9,10 @@ public interface DoorService {
     Map applyCHSandSI(Map<String, String> stringMap) throws Exception;
     Map applyInspect(Map<String, String> stringMap) throws Exception;
     Map commitTime(Map<String, String> stringMap) throws Exception;
+
+    Map applyFileCommitment(Map<String, String> stringMap) throws Exception;
+
+    Map applyCopy(Map<String, String> stringMap) throws Exception;
+
+    Map supplementaryDossier(Map<String, String> stringMap) throws Exception;
 }

@@ -1,17 +1,11 @@
 package com.chinatechstar.door.controller;
 
-import cn.hutool.crypto.SmUtil;
-import cn.hutool.crypto.asymmetric.KeyType;
-import cn.hutool.crypto.asymmetric.SM2;
 import com.alibaba.fastjson.JSONObject;
-import com.chinatechstar.data.entity.ProsonDateils;
 import com.chinatechstar.door.service.DoorService;
 import com.chinatechstar.door.utils.HttpClientUtils;
-import com.chinatechstar.door.utils.MyEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -95,6 +89,36 @@ public class DoorController {
     @PostMapping("commit/time")
     public Map commitTime(@RequestBody Map<String,String> stringMap) throws Exception {
         Map map =doorService.commitTime(stringMap);
+        return map;
+    }
+    /**
+     * 档案转递材料补充提交
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyFileCommitment")
+    public Map applyFileCommitment(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.applyFileCommitment(stringMap);
+        return map;
+    }
+    /**
+     * 档案资料复印
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyCopy")
+    public Map applyCopy(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.applyCopy(stringMap);
+        return map;
+    }
+    /**
+     * 档案材料补充申请
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("supplementaryDossier")
+    public Map supplementaryDossier(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.supplementaryDossier(stringMap);
         return map;
     }
 
