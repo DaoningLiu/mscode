@@ -88,8 +88,8 @@ public class DoorServiceImpl implements DoorService {
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        decryptStr.put ("userNo",prosonDateils.getPersonNation ());
-        decryptStr.put ("aac147",prosonDateils.getPersonNation ());
+        decryptStr.put ("userNo",prosonDateils.getPersonCard ());
+        decryptStr.put ("aac147",prosonDateils.getPersonCard ());
         decryptStr.put ("aac067",prosonDateils.getPersonNumber ());
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
@@ -118,8 +118,8 @@ public class DoorServiceImpl implements DoorService {
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        decryptStr.put ("userNo",prosonDateils.getPersonNation ());
-        decryptStr.put ("aac147",prosonDateils.getPersonNation ());
+        decryptStr.put ("userNo",prosonDateils.getPersonCard ());
+        decryptStr.put ("aac147",prosonDateils.getPersonCard ());
         decryptStr.put ("aac067",prosonDateils.getPersonNumber ());
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
@@ -147,8 +147,8 @@ public class DoorServiceImpl implements DoorService {
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        decryptStr.put ("userNo",prosonDateils.getPersonNation ());
-        decryptStr.put ("aac147",prosonDateils.getPersonNation ());
+        decryptStr.put ("userNo",prosonDateils.getPersonCard ());
+        decryptStr.put ("aac147",prosonDateils.getPersonCard ());
         decryptStr.put ("aac067",prosonDateils.getPersonNumber ());
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
@@ -176,8 +176,8 @@ public class DoorServiceImpl implements DoorService {
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        decryptStr.put ("userNo",prosonDateils.getPersonNation ());
-        decryptStr.put ("aac147",prosonDateils.getPersonNation ());
+        decryptStr.put ("userNo",prosonDateils.getPersonCard ());
+        decryptStr.put ("aac147",prosonDateils.getPersonCard ());
         decryptStr.put ("aac067",prosonDateils.getPersonNumber ());
         decryptStr.remove ( "userIdcard" );
         //定义银海访问接口所需参宿
@@ -203,8 +203,8 @@ public class DoorServiceImpl implements DoorService {
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //根据前端传过来的数据查询当前操作数据
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        mapKey.put ( "userNo",prosonDateils.getPersonNation () );
-        mapKey.put ( "aac147",prosonDateils.getPersonNation () );
+        mapKey.put ( "userNo",prosonDateils.getPersonCard () );
+        mapKey.put ( "aac147",prosonDateils.getPersonCard () );
         mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
@@ -231,8 +231,8 @@ public class DoorServiceImpl implements DoorService {
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
         //根据前端传过来的数据查询当前操作数据
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        mapKey.put ( "userNo",prosonDateils.getPersonNation () );
-        mapKey.put ( "aac147",prosonDateils.getPersonNation () );
+        mapKey.put ( "userNo",prosonDateils.getPersonCard () );
+        mapKey.put ( "aac147",prosonDateils.getPersonCard () );
         mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
         mapKey.put ( "yhPost",JSONUtils.toJSONString(mapKey ));
         //访问他们的接口接收返回值 直接对其前端返回不对其改动
@@ -255,8 +255,8 @@ public class DoorServiceImpl implements DoorService {
         Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //根据前端传过来的数据查询当前操作数据
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
-        mapKey.put ( "userNo",prosonDateils.getPersonNation () );
-        mapKey.put ( "aac147",prosonDateils.getPersonNation () );
+        mapKey.put ( "userNo",prosonDateils.getPersonCard () );
+        mapKey.put ( "aac147",prosonDateils.getPersonCard () );
         mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
