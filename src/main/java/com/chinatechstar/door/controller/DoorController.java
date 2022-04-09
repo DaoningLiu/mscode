@@ -35,7 +35,7 @@ public class DoorController {
      * @return
      */
     @PostMapping("queryApplyDetail")
-    public Map getPersonInfo(@RequestBody Map<String,String> stringMap) throws Exception {
+    public Map queryApplyDetail(@RequestBody Map<String,String> stringMap) throws Exception {
         Map map =doorService.queryApplyDetail(stringMap);
         return map;
     }
@@ -121,13 +121,24 @@ public class DoorController {
         Map map =doorService.supplementaryDossier(stringMap);
         return map;
     }
+    /**
+     * 档案所在地查询
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("getPersonInfo")
+    public Map getPersonInfo(@RequestBody  Map<String,String> stringMap) throws Exception {
+        Map map =doorService.getPersonInfo(stringMap);
+        System.out.println (map);
+        return map;
+    }
 
     /**
      * POST 机构查询
      * @param stringMap
      * @return
      */
-    @PostMapping("queryOrg")
+   /* @PostMapping("queryOrg")
     public JSONObject queryOrg(@RequestBody Map<String,String> stringMap){
         String url = "http://192.168.1.87:8082/archs/public/service/queryOrg";
         JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
@@ -145,6 +156,6 @@ public class DoorController {
         String url = "http://192.168.1.87:8082/archs/public/service/downLoadFile";
         JSONObject jsonObject = HttpClientUtils.httpPost ( url, stringMap );
         return jsonObject;
-    }
+    }*/
 
 }

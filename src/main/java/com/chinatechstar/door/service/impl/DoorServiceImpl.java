@@ -179,6 +179,7 @@ public class DoorServiceImpl implements DoorService {
         decryptStr.put ("userNo",prosonDateils.getPersonNation ());
         decryptStr.put ("aac147",prosonDateils.getPersonNation ());
         decryptStr.put ("aac067",prosonDateils.getPersonNumber ());
+        decryptStr.remove ( "userIdcard" );
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
         mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
@@ -207,7 +208,7 @@ public class DoorServiceImpl implements DoorService {
         mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
-        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(mapKey ));
         //访问他们的接口接收返回值 直接对其前端返回不对其改动
         return jsonObject ( mapKey );
     }
@@ -233,7 +234,7 @@ public class DoorServiceImpl implements DoorService {
         mapKey.put ( "userNo",prosonDateils.getPersonNation () );
         mapKey.put ( "aac147",prosonDateils.getPersonNation () );
         mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
-        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(mapKey ));
         //访问他们的接口接收返回值 直接对其前端返回不对其改动
         return jsonObject ( mapKey );
     }
@@ -259,7 +260,30 @@ public class DoorServiceImpl implements DoorService {
         mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
-        mapKey.put ( "yhPost",JSONUtils.toJSONString(decryptStr ));
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(mapKey ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+
+    @Override
+    public Map getPersonInfo(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/getPersonInfo" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        //mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //根据前端传过来的数据查询当前操作数据
+        ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
+        mapKey.put ( "userNo",prosonDateils.getPersonCard () );
+        mapKey.put ( "aac147",prosonDateils.getPersonCard () );
+        //mapKey.put ( "aac067",prosonDateils.getPersonNation () );
+        mapKey.put ( "aac003",prosonDateils.getPersonName () );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(mapKey ));
         //访问他们的接口接收返回值 直接对其前端返回不对其改动
         return jsonObject ( mapKey );
     }
@@ -290,12 +314,13 @@ public class DoorServiceImpl implements DoorService {
         return datass;
     }
     static Map getMapToString(String string) throws Exception {
-        final byte[] privatesKey = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
-        //将私钥放到sm2里便于使用，当前不需要公钥所以就以null代替
-        SM2 sm2s = SmUtil.sm2(privatesKey, null);
+        final byte[] decode = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
+        final byte[] decodes = HttpClientUtils.decode ( MyEnum.PUVBLICS_KEY.getDesc ());
+        SM2 sm2 = SmUtil.sm2(decode, decodes);
         //私钥解密
-        Map decryptStr = retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2s.decryptFromBcd(string, KeyType.PrivateKey)) ).toString ()) ;
-
+        //Map decryptStr = retunMap(JSONObject.toJSON (StrUtil.utf8Str(sm2s.decryptFromBcd(string, KeyType.PrivateKey)) ).toString ()) ;
+        String s = sm2.decryptStr ( string, KeyType.PrivateKey );
+        Map decryptStr = retunMap(s );
 
         return decryptStr;
     }

@@ -19,4 +19,6 @@ public interface DoorService {
     Map applyCopy(Map<String, String> stringMap) throws Exception;
 
     Map supplementaryDossier(Map<String, String> stringMap) throws Exception;
+
+    Map getPersonInfo(Map<String, String> stringMap) throws Exception;
 }

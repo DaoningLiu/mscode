@@ -118,7 +118,7 @@ public class UsersServiceimpl implements UsersService {
         final byte[] decode = HttpClientUtils.decode ( MyEnum.PRIVATES_KEY.getDesc ());
         final byte[] decodes = HttpClientUtils.decode ( MyEnum.PUVBLIC_KEY.getDesc ());
         SM2 sm2 = SmUtil.sm2(decode, decodes);
-        String sss="04fe860858772d16aac59c1931b8e1ada47b521035e8a5b5690f8be73eb987e6a9d851baf77e6abd1eb0221b4400c127267341215324011d931bd81bbf09076bcedefa2ca09cb6d617b1b5d7c392793105fccbb5180a9924f59e9c3809534c9542ef359f";
+        String sss="04d708768c9d0c7814cb286b645ffacbb70b5151e13d7a36314e3967913cf533a70753be54e5e9772ea3177888f91a58ee67b1415259aa78aea26817d594a362973219e3ae5789f7e0badc5a7761c2bc62a1c939be5710ac0c11d98e0c1553c3e56f9df951f952768a722129e981794f767447aa20bd67752d2be1b156bb78168c382d6f";
         //System.out.println (bytes);
 
         // 公钥加密
@@ -167,7 +167,7 @@ public class UsersServiceimpl implements UsersService {
         return result;
     }
 
-   /* public static void main(String[] args) {
+    /*public static void main(String[] args) {
         KeyPair pair = SecureUtil.generateKeyPair("SM2");
         PrivateKey aPrivate = pair.getPrivate();
         byte[] privateKey = aPrivate.getEncoded();//解密时需要用到
