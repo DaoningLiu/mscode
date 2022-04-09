@@ -85,6 +85,7 @@ public class DoorServiceImpl implements DoorService {
         //传入要访问的接口路径
         mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyArchiveBorrow" );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
         //获取用户的手机号 身份证号码 并且赋值
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
         decryptStr.put ("userNo",prosonDateils.getPersonNation ());
