@@ -285,6 +285,34 @@ public class DoorServiceImpl implements DoorService {
         return jsonObject ( mapKey );
     }
 
+    /**
+     * 档案转递申请
+     * @param stringMap
+     * @return
+     */
+    @Override
+    public Map applyFileTransfer(Map<String, String> stringMap) throws Exception {
+        //调用银海接口所需要的数据
+        Map mapKey =new HashMap ();
+        //传入要访问的接口路径
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/getPersonInfo" );
+        //还有前端传回来的加密字符串格式{"data":"加密字符串"}
+        //mapKey.put ( "data",stringMap.get ( "data" ) );
+        //私钥解密前端传回的数据，因为这边也需要解密完成的数据
+        Map decryptStr = getMapToString (stringMap.get ( "data" )  );
+        //根据前端传过来的数据查询当前操作数据
+        ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
+        mapKey.put ( "userNo",prosonDateils.getPersonCard () );
+        mapKey.put ( "aac147",prosonDateils.getPersonCard () );
+        mapKey.put ( "aac067",prosonDateils.getPersonNation () );
+        //mapKey.put ( "aac003",prosonDateils.getPersonName () );
+        //定义银海访问接口所需参宿
+        //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
+        mapKey.put ( "yhPost",JSONUtils.toJSONString(mapKey ));
+        //访问他们的接口接收返回值 直接对其前端返回不对其改动
+        return jsonObject ( mapKey );
+    }
+
 
     static Map jsonObject(Map map) throws Exception {
         //生成url访问接口

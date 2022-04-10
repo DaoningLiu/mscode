@@ -21,4 +21,6 @@ public interface DoorService {
     Map supplementaryDossier(Map<String, String> stringMap) throws Exception;
 
     Map getPersonInfo(Map<String, String> stringMap) throws Exception;
+
+    Map applyFileTransfer(Map<String, String> stringMap)throws Exception ;
 }

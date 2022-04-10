@@ -79,6 +79,19 @@ public class DoorController {
         return map;
     }
 
+    //POST 档案转递申请
+    //POST /public/service/applyFileTransfer
+    /**
+     * 提交预约时间
+     * @param stringMap
+     * @return
+     */
+    @PostMapping("applyFileTransfer")
+    public Map applyFileTransfer(@RequestBody Map<String,String> stringMap) throws Exception {
+        Map map =doorService.applyFileTransfer(stringMap);
+        return map;
+    }
+
     //POST 提交预约时间
     //POST /public/service/commit/time
     /**
@@ -91,6 +104,7 @@ public class DoorController {
         Map map =doorService.commitTime(stringMap);
         return map;
     }
+
     /**
      * 档案转递材料补充提交
      * @param stringMap
