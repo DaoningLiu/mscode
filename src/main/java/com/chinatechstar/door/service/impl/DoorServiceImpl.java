@@ -296,7 +296,7 @@ public class DoorServiceImpl implements DoorService {
         //调用银海接口所需要的数据
         Map mapKey =new HashMap ();
         //传入要访问的接口路径
-        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/getPersonInfo" );
+        mapKey.put ( "url",MyEnum.YH_URL.getDesc ()+"/archs/public/service/applyFileTransfer" );
         //还有前端传回来的加密字符串格式{"data":"加密字符串"}
         //mapKey.put ( "data",stringMap.get ( "data" ) );
         //私钥解密前端传回的数据，因为这边也需要解密完成的数据
