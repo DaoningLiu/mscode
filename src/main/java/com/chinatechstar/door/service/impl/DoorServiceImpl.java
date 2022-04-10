@@ -305,7 +305,7 @@ public class DoorServiceImpl implements DoorService {
         ProsonDateils prosonDateils=usersService.queryUserById (decryptStr.get ( "userIdcard" ).toString ());
         mapKey.put ( "userNo",prosonDateils.getPersonCard () );
         mapKey.put ( "aac147",prosonDateils.getPersonCard () );
-        mapKey.put ( "aac067",prosonDateils.getPersonNation () );
+        mapKey.put ( "aac067",prosonDateils.getPersonNumber () );
         //mapKey.put ( "aac003",prosonDateils.getPersonName () );
         //定义银海访问接口所需参宿
         //将参数转成字符串放入map中，JSONUtils.toJSONString(paramsMapss )这个方法可以保留map格式
