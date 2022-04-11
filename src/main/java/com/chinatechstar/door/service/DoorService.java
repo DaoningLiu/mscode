@@ -23,4 +23,8 @@ public interface DoorService {
     Map getPersonInfo(Map<String, String> stringMap) throws Exception;
 
     Map applyFileTransfer(Map<String, String> stringMap)throws Exception ;
+
+    Map issueProve(Map<String, String> stringMap) throws Exception;
+
+    Map queryApply(Map<String, String> stringMap) throws Exception;
 }

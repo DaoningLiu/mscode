@@ -152,14 +152,39 @@ public class DoorController {
      * @param stringMap
      * @return
      */
-   /* @PostMapping("queryOrg")
+    @PostMapping("queryOrg")
     public JSONObject queryOrg(@RequestBody Map<String,String> stringMap){
         String url = "http://192.168.1.87:8082/archs/public/service/queryOrg";
         JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
         System.out.println (jsonObject);
         return jsonObject;
     }
-    @PostMapping("uplodfile")
+    /**
+     * 开具证明申请
+     * @param stringMap
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("issueProve")
+    public Map issueProve(@RequestBody  Map<String,String> stringMap) throws Exception {
+        Map map =doorService.issueProve(stringMap);
+        System.out.println (map);
+        return map;
+    }
+
+    /**
+     * 申请数据查询
+     * @param stringMap
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("queryApply")
+    public Map queryApply(@RequestBody  Map<String,String> stringMap) throws Exception {
+        Map map =doorService.queryApply(stringMap);
+        System.out.println (map);
+        return map;
+    }
+    /*@PostMapping("uplodfile")
     public JSONObject uplodfile(@RequestBody Map<String,String> stringMap){
         String url = "http://192.168.1.87:8082/archs/public/service/uplodfile";
         JSONObject jsonObject = HttpClientUtils.httpPost ( url,stringMap);
