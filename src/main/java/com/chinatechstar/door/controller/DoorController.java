@@ -160,7 +160,7 @@ public class DoorController {
         return jsonObject;
     }
     /**
-     * 开具证明申请
+     * 开具证明申请（测试）
      * @param stringMap
      * @return
      * @throws Exception
